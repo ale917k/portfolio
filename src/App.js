@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Switch, Route } from 'react-router-dom';
+
+import SmoothScrollbar from 'smooth-scrollbar';
+import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
+import Scrollbar from 'react-smooth-scrollbar';
 
 import Container from '@material-ui/core/Container';
 
@@ -11,7 +15,19 @@ import PageNotFound from './pages/PageNotFound/PageNotFound.page';
 import Cursor from './components/Cursor/Cursor.component';
 import Header from './components/Header/Header.component';
 
+import { makeStyles } from "@material-ui/core/styles";
+
+SmoothScrollbar.use(OverscrollPlugin);
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    height: "100vh",
+  },
+}));
+
 function App() {
+  const classes = useStyles();
+
   onmousemove = e => {
     const cursor = document.querySelector(".cursor");
     cursor.style.left = `${e.pageX}px`;
@@ -36,18 +52,24 @@ function App() {
   };
 
   return (
-    <Container>
+    <Fragment>
       <Cursor />
-      <Header />
+      <Scrollbar
+        damping={0.1}
+      >
+        <Container className={classes.root}>
+          <Header />
 
-      <Switch>
-        <Route exact path='/(|about)' component={About} />
-        <Route exact path='/projects' component={Projects} />
-        <Route exact path='/contact' component={Contact} />
+          <Switch>
+            <Route exact path='/(|about)' component={About} />
+            <Route exact path='/projects' component={Projects} />
+            <Route exact path='/contact' component={Contact} />
 
-        <Route path="*" component={PageNotFound} />
-      </Switch>
-    </Container>
+            <Route path="*" component={PageNotFound} />
+          </Switch>
+        </Container >
+      </Scrollbar>
+    </Fragment >
   );
 }
 

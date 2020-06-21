@@ -15,7 +15,7 @@
 html,
 body {
   cursor: none;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 body {
@@ -26,4 +26,14 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+::-moz-selection {
+  color: #fafffd;
+  background: #507dbc;
+}
+
+::selection {
+  color: #fafffd;
+  background: #507dbc;
 }
