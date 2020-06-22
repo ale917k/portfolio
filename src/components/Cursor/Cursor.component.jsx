@@ -9,15 +9,15 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(0.5),
     borderRadius: "50%",
     transform: "translateX(-50%) translateY(-50%)",
-    mixBlendMode: "difference !important",
     pointerEvents: "none",
+    zIndex: "9999",
 
     "&.cursor": {
-      backgroundColor: "white",
+      backgroundColor: theme.palette.common.black,
     },
 
     "&.bg-cursor": {
-      backgroundColor: theme.palette.common.white,
+      border: `1px solid ${theme.palette.grey[500]}`,
       width: theme.spacing(5),
       height: theme.spacing(5),
       transition: `width ${theme.transitions.duration.short}ms ${theme.transitions.easing.easeInOut}, height ${theme.transitions.duration.short}ms ${theme.transitions.easing.easeInOut}`,
@@ -26,21 +26,6 @@ const useStyles = makeStyles((theme) => ({
         width: theme.spacing(8),
         height: theme.spacing(8),
       },
-
-      "&.pulse": {
-        animation: `$cursorAnim 500ms alternate infinite`,
-      },
-    },
-  },
-
-  "@keyframes cursorAnim": {
-    from: {
-      transform: "translateX(-50%) translateY(-50%) scale(1)",
-      backgroundColor: theme.palette.common.black,
-    },
-    to: {
-      transform: "translateX(-50%) translateY(-50%) scale(1.2)",
-      backgroundColor: theme.palette.common.black,
     },
   },
 }));

@@ -1,8 +1,9 @@
 import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 
-import Link from "@material-ui/core/Link";
+import { expandCursor, shrinkCursor } from "../Cursor/cursor.actions";
 
+import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -31,26 +32,14 @@ const useStyles = makeStyles((theme) => ({
 const Menu = () => {
   const classes = useStyles();
 
-  const cursorOver = () => {
-    const bgCursor = document.querySelector(".bg-cursor");
-    bgCursor.classList.add("expand");
-    bgCursor.classList.add("pulse");
-  };
-
-  const cursorOut = () => {
-    const bgCursor = document.querySelector(".bg-cursor");
-    bgCursor.classList.remove("expand");
-    bgCursor.classList.remove("pulse");
-  };
-
   return (
     <ul className={classes.root}>
       <li>
         <Link
           component={RouterLink}
           to="/projects"
-          onMouseOver={cursorOver}
-          onMouseOut={cursorOut}
+          onMouseOver={expandCursor}
+          onMouseOut={shrinkCursor}
         >
           PROJECTS
         </Link>
@@ -59,8 +48,8 @@ const Menu = () => {
         <Link
           component={RouterLink}
           to="/about"
-          onMouseOver={cursorOver}
-          onMouseOut={cursorOut}
+          onMouseOver={expandCursor}
+          onMouseOut={shrinkCursor}
         >
           ABOUT
         </Link>
@@ -69,8 +58,8 @@ const Menu = () => {
         <Link
           component={RouterLink}
           to="/contact"
-          onMouseOver={cursorOver}
-          onMouseOut={cursorOut}
+          onMouseOver={expandCursor}
+          onMouseOut={shrinkCursor}
         >
           CONTACT
         </Link>
