@@ -12,20 +12,16 @@ import {
 
 import { makeStyles } from "@material-ui/core/styles";
 
-import { ReactComponent as AutumnAnimation } from "../../assets/autumn_card.svg";
+import { ReactComponent as AutumnAnimationSvg } from "../assets/autumn_card.svg";
 
 const useStyles = makeStyles(() => ({
   root: {
-    maxHeight: "100vh",
-    overflow: "hidden",
-  },
-  svg: {
     maxHeight: "100vh",
     minHeight: "100vh",
   },
 }));
 
-const Contact = () => {
+const AutumnAnimation = () => {
   const classes = useStyles();
   let svg = useRef(null);
 
@@ -185,14 +181,14 @@ const Contact = () => {
     let orangeLeaf = svg.children[2].children[2];
 
     const startLoops = () => {
-      let colors = ["#edcc93", "#f7e3ae", "#f3ebcc", "#edcc93"];
-      let bgTl = new TimelineMax({ repeat: -1, repeatDelay: 2 });
+      // let colors = ["#edcc93", "#f7e3ae", "#f3ebcc", "#edcc93"];
+      // let bgTl = new TimelineMax({ repeat: -1, repeatDelay: 2 });
 
-      bgTl
-        .to(document.body, 3, { backgroundColor: colors[0] })
-        .to(document.body, 3, { backgroundColor: colors[1] }, "+=2")
-        .to(document.body, 3, { backgroundColor: colors[2] }, "+=2")
-        .to(document.body, 3, { backgroundColor: colors[3] }, "+=2");
+      // bgTl
+      //   .to(document.body, 3, { backgroundColor: colors[0] })
+      //   .to(document.body, 3, { backgroundColor: colors[1] }, "+=2")
+      //   .to(document.body, 3, { backgroundColor: colors[2] }, "+=2")
+      //   .to(document.body, 3, { backgroundColor: colors[3] }, "+=2");
 
       const repeatFall = (leafId) => {
         let range = Math.random() * 800;
@@ -260,17 +256,11 @@ const Contact = () => {
         .add(enterFloorVegetation(), "scene-floor-vegetation")
         .add(enterTreeStuff(), "scene-enter-treestuff")
         .add(enterGreeting(), "scene-enter-greeting");
-
-    console.log("svg children: ", svg.children);
   }, [svg]);
 
   return (
-    <div className={classes.root}>
-      <AutumnAnimation className={classes.svg} ref={(el) => (svg = el)} />
-
-      <form action=""></form>
-    </div>
+    <AutumnAnimationSvg className={classes.root} ref={(el) => (svg = el)} />
   );
 };
 
-export default Contact;
+export default AutumnAnimation;

@@ -3,8 +3,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
-import Logo from "../Logo/Logo.component";
-import Menu from "../Menu/Menu.component";
+import Logo from "./Logo.component";
+import Menu from "./Menu.component";
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -1,7 +1,7 @@
 import React from "react";
 import Tilt from "react-tilt";
 
-import { expandCursor, shrinkCursor } from "../Cursor/cursor.actions";
+import { expandCursor, shrinkCursor } from "../js/cursor.actions";
 
 import { makeStyles } from "@material-ui/core/styles";
 

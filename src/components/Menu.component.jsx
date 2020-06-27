@@ -1,7 +1,7 @@
 import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 
-import { expandCursor, shrinkCursor } from "../Cursor/cursor.actions";
+import { expandCursor, shrinkCursor } from "../js/cursor.actions";
 
 import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
@@ -37,21 +37,21 @@ const Menu = () => {
       <li>
         <Link
           component={RouterLink}
-          to="/projects"
-          onMouseOver={expandCursor}
-          onMouseOut={shrinkCursor}
-        >
-          PROJECTS
-        </Link>
-      </li>
-      <li>
-        <Link
-          component={RouterLink}
           to="/about"
           onMouseOver={expandCursor}
           onMouseOut={shrinkCursor}
         >
           ABOUT
+        </Link>
+      </li>
+      <li>
+        <Link
+          component={RouterLink}
+          to="/projects"
+          onMouseOver={expandCursor}
+          onMouseOut={shrinkCursor}
+        >
+          PROJECTS
         </Link>
       </li>
       <li>

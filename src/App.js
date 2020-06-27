@@ -2,13 +2,13 @@ import React, { Fragment } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import SimpleBarReact from "simplebar-react";
 
-import About from './pages/About/About.page';
-import Contact from './pages/Contact/Contact.page';
-import Projects from './pages/Projects/Projects.page';
-import PageNotFound from './pages/PageNotFound/PageNotFound.page';
+import About from './pages/About.page';
+import Contact from './pages/Contact.page';
+import Projects from './pages/Projects.page';
+import PageNotFound from './pages/PageNotFound.page';
 
-import Cursor from "./components/Cursor/Cursor.component";
-import Header from "./components/Header/Header.component";
+import Cursor from "./components/Cursor.component";
+import Header from "./components/Header.component";
 
 import "simplebar/src/simplebar.css";
 
@@ -24,7 +24,7 @@ function App() {
       const bgCursor = document.querySelector(".bg-cursor");
       bgCursor.style.left = `${e.pageX}px`;
       bgCursor.style.top = `${e.pageY}px`;
-    }, 150);
+    }, 100);
   };
 
   onmousedown = () => {
