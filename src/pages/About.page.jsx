@@ -1,27 +1,19 @@
 import React, { Fragment } from "react";
 
-import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
+import SKILLS_TECH from "../js/SKILLS_TECH";
 
 import Presentation from "../components/Presentation.component";
 import SliderSection from "../components/SliderSection.component";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    paddingTop: theme.spacing(3) + 60,
-  },
-}));
+import SkillsSection from "../components/SkillsSection.component";
 
 const About = () => {
-  const classes = useStyles();
-
   return (
     <Fragment>
       <Presentation />
-
-      <Container className={classes.root}>
-        <SliderSection />
-      </Container>
+      <SliderSection />
+      <SkillsSection {...SKILLS_TECH.front} />
+      <SkillsSection {...SKILLS_TECH.back} />
+      <SkillsSection {...SKILLS_TECH.tech} />
     </Fragment>
   );
 };
