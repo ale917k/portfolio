@@ -19,7 +19,8 @@ body {
 }
 
 body {
-  background-color: black;
+  /* background-image: linear-gradient(to bottom, #F6F7EB 0%, #EFD6AC 100%); */
+  background-color: white;
   margin: 0;
   height: 100vh;
 }
@@ -37,4 +38,13 @@ code {
 ::selection {
   color: #fafffd;
   background: #507dbc;
+}
+
+a,
+a:hover {
+  cursor: none;
+}
+
+.logo .glare-wrapper {
+  border-radius: 50%;
 }

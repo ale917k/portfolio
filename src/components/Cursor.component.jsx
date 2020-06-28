@@ -13,14 +13,16 @@ const useStyles = makeStyles((theme) => ({
     zIndex: "9999",
 
     "&.cursor": {
-      backgroundColor: theme.palette.common.black,
+      backgroundColor: theme.palette.common.white,
+      mixBlendMode: "difference !important",
     },
 
     "&.bg-cursor": {
-      border: `1px solid ${theme.palette.grey[500]}`,
+      border: `1px solid ${theme.palette.common.white}`,
       width: theme.spacing(5),
       height: theme.spacing(5),
       transition: `width ${theme.transitions.duration.short}ms ${theme.transitions.easing.easeInOut}, height ${theme.transitions.duration.short}ms ${theme.transitions.easing.easeInOut}`,
+      mixBlendMode: "difference !important",
 
       "&.expand": {
         width: theme.spacing(8),
