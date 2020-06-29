@@ -4,6 +4,9 @@ import { PieChart, Pie, Sector } from "recharts";
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
+import Link from "@material-ui/core/Link";
+
+import { expandCursor, shrinkCursor } from "../js/cursor.actions";
 
 const renderActiveShape = ({
   cx,
@@ -94,10 +97,16 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     textAlign: "center",
     paddingTop: theme.spacing(3),
+    zIndex: 1,
+    "& a": {
+      "&:hover": {
+        textDecoration: "none",
+      },
+    },
   },
 }));
 
-const ProgressChart = ({ tech, valueAT, valueMT, valueAP, valueMP }) => {
+const ProgressChart = ({ tech, valueAT, valueMT, valueAP, valueMP, link }) => {
   const classes = useStyles();
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -115,7 +124,15 @@ const ProgressChart = ({ tech, valueAT, valueMT, valueAP, valueMP }) => {
   return (
     <Box className={classes.root}>
       <Typography variant="h3" className={classes.title}>
-        {tech}
+        <Link
+          href={link}
+          rel="noopener noreferrer"
+          target="_blank"
+          onMouseOver={expandCursor}
+          onMouseOut={shrinkCursor}
+        >
+          {tech}
+        </Link>
       </Typography>
       <PieChart width={400} height={400} className={classes.graph}>
         <Pie

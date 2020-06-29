@@ -5,6 +5,7 @@ const SKILLS_PROGRESS = [
         valueMT: 5,
         valueAP: 20,
         valueMP: 30,
+        link: 'https://greensock.com/gsap/',
     },
     {
         tech: 'GraphQL',
@@ -12,6 +13,7 @@ const SKILLS_PROGRESS = [
         valueMT: 5,
         valueAP: 20,
         valueMP: 30,
+        link: 'https://graphql.org/',
     },
     {
         tech: 'Typescript',
@@ -19,6 +21,7 @@ const SKILLS_PROGRESS = [
         valueMT: 5,
         valueAP: 20,
         valueMP: 30,
+        link: 'https://www.typescriptlang.org/',
     },
     {
         tech: 'Jest',
@@ -26,6 +29,7 @@ const SKILLS_PROGRESS = [
         valueMT: 5,
         valueAP: 20,
         valueMP: 30,
+        link: 'https://jestjs.io/',
     },
 ];
 
