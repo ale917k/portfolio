@@ -1,16 +1,23 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { Link as RouterLink, useLocation } from "react-router-dom";
 import Tilt from "react-parallax-tilt";
 
 import { expandCursor, shrinkCursor } from "../js/cursor.actions";
 
 import { makeStyles } from "@material-ui/core/styles";
+import Box from "@material-ui/core/Box";
+import Link from "@material-ui/core/Link";
 
 const Logo = () => {
   const location = useLocation();
 
   const useStyles = makeStyles((theme) => ({
     root: {
+      "&:hover": {
+        textDecoration: "none",
+      },
+    },
+    tilt: {
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
@@ -36,7 +43,7 @@ const Logo = () => {
         location.pathname === "/contact"
           ? theme.palette.common.black
           : theme.palette.common.white,
-      transform: "translateZ(60px)",
+      transform: "translateZ(60px) scale(0.88)",
       borderRadius: "50%",
     },
   }));
@@ -44,17 +51,23 @@ const Logo = () => {
   const classes = useStyles();
 
   return (
-    <Tilt
-      className={`${classes.root} logo`}
-      perspective={500}
-      glareEnable={true}
-      glareMaxOpacity={0.45}
-      scale={1.1}
+    <Link
+      className={classes.root}
+      component={RouterLink}
+      to="/about"
       onMouseOver={expandCursor}
       onMouseOut={shrinkCursor}
     >
-      <div className={classes.content}>AP</div>
-    </Tilt>
+      <Tilt
+        className={`${classes.tilt} logo`}
+        perspective={500}
+        glareEnable={true}
+        glareMaxOpacity={0.45}
+        scale={1.1}
+      >
+        <Box className={classes.content}>AP</Box>
+      </Tilt>
+    </Link>
   );
 };
 
