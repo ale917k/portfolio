@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
       "linear-gradient(125deg, rgb(236, 252, 255) 0%, rgb(236, 252, 255) 40%, rgb(178, 252, 255) calc(40% + 1px), rgb(178, 252, 255) 60%, rgb(94, 223, 255) calc(60% + 1px), rgb(94, 223, 255) 72%, rgb(62, 100, 255) calc(72% + 1px), rgb(62, 100, 255) 100%)",
   },
   container: {
-    padding: `${theme.spacing(10)}px 0`,
+    paddingTop: theme.spacing(10),
+    paddingBottom: theme.spacing(10),
   },
   title: {
     textAlign: "center",
@@ -29,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SliderSection = ({ title, subtitle, skills }) => {
+const SkillsSection = ({ title, subtitle, skills }) => {
   const classes = useStyles();
 
   return (
@@ -51,4 +52,4 @@ const SliderSection = ({ title, subtitle, skills }) => {
   );
 };
 
-export default SliderSection;
+export default SkillsSection;

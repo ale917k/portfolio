@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     position: "relative",
-    width: '100%',
+    width: "100%",
     height: "100%",
     background: theme.palette.common.black,
     transformStyle: "preserve-3d",
@@ -130,7 +130,9 @@ const useStyles = makeStyles((theme) => ({
     margin: "0 auto",
     paddingBottom: "20px",
   },
-  link: {},
+  link: {
+    display: "block",
+  },
 }));
 
 const SkillBox = ({ title, strapLine, svgName, description, link }) => {
