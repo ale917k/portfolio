@@ -12,7 +12,7 @@ import {
 
 import { makeStyles } from "@material-ui/core/styles";
 
-import { ReactComponent as AutumnAnimationSvg } from "../assets/autumn_card.svg";
+import { ReactComponent as AutumnAnimationSvg } from "../../assets/autumn_card.svg";
 
 const useStyles = makeStyles(() => ({
   root: {

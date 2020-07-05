@@ -93,7 +93,7 @@ const Presentation = () => {
 
         <img
           className={classes.img}
-          src={require("../assets/me.png")}
+          src={require("../../assets/me.png")}
           alt="Myself"
         />
       </Container>

@@ -7,7 +7,7 @@ import TextField from "@material-ui/core/TextField";
 import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
 
-import ErrorMessage from "../components/ErrorMessage.component";
+import ErrorMessage from "../global/ErrorMessage.component";
 
 const useStyles = makeStyles((theme) => ({
   root: {

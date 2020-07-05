@@ -8,8 +8,8 @@ import Projects from './pages/Projects.page';
 import Styleguide from './pages/Styleguide.page';
 import PageNotFound from './pages/PageNotFound.page';
 
-import Cursor from "./components/Cursor.component";
-import Header from "./components/Header.component";
+import Cursor from "./components/global/Cursor.component";
+import Header from "./components/global/Header.component";
 
 import { makeStyles } from "@material-ui/core/styles";
 import "simplebar/src/simplebar.css";

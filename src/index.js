@@ -7,8 +7,6 @@ import * as serviceWorker from './serviceWorker';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-import { StoreProvider } from './Store';
-
 import App from './App';
 
 import './index.css';
@@ -59,14 +57,12 @@ const theme = createMuiTheme({
 });
 
 ReactDOM.render(
-  <StoreProvider>
-    <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <App />
-      </ThemeProvider>
-    </BrowserRouter>
-  </StoreProvider>,
+  <BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

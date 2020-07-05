@@ -5,7 +5,7 @@ import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 
-import { expandCursor, shrinkCursor } from "../js/cursor.actions";
+import { expandCursor, shrinkCursor } from "../../js/cursor.actions";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -143,7 +143,7 @@ const SkillBox = ({ title, strapLine, svgName, description, link }) => {
       <Box
         className={`${classes.content} ${classes.front}`}
         style={{
-          backgroundImage: `url(${require("../assets/redSmoke.png")})`,
+          backgroundImage: `url(${require("../../assets/redSmoke.png")})`,
         }}
       >
         <Box className={classes.innerContainer}>
@@ -165,13 +165,13 @@ const SkillBox = ({ title, strapLine, svgName, description, link }) => {
       <Box
         className={`${classes.content} ${classes.back}`}
         style={{
-          backgroundImage: `url(${require("../assets/blueSmoke.png")})`,
+          backgroundImage: `url(${require("../../assets/blueSmoke.png")})`,
         }}
       >
         <Box className={classes.innerContainer}>
           <Box className={classes.inner}>
             <Box className={classes.icon}>
-              <img src={require(`../assets/${svgName}.svg`)} alt={svgName} />
+              <img src={require(`../../assets/${svgName}.svg`)} alt={svgName} />
             </Box>
             <Typography variant="body2" gutterBottom>
               {description}

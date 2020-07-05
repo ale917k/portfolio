@@ -7,7 +7,7 @@ import Box from "@material-ui/core/Box";
 
 import ProgressChart from "./ProgressChart.component";
 
-import SKILL_PROGRESS from "../js/SKILLS_PROGRESS";
+import SKILL_PROGRESS from "../../js/SKILLS_PROGRESS";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,7 +42,7 @@ const SkillsProgressSection = () => {
       </Box>
       <Box className={classes.skillsContainer}>
         {SKILL_PROGRESS.map((skill) => (
-          <ProgressChart {...skill} />
+          <ProgressChart key={skill.tech} {...skill} />
         ))}
       </Box>
     </Container>

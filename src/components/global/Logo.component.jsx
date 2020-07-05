@@ -2,7 +2,7 @@ import React from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import Tilt from "react-parallax-tilt";
 
-import { expandCursor, shrinkCursor } from "../js/cursor.actions";
+import { expandCursor, shrinkCursor } from "../../js/cursor.actions";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
@@ -63,7 +63,7 @@ const Logo = () => {
         perspective={500}
         glareEnable={true}
         glareMaxOpacity={0.45}
-        scale={1.1}
+        scale={1.05}
       >
         <Box className={classes.content}>AP</Box>
       </Tilt>

@@ -2,8 +2,8 @@ import React from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
 
-import AutumnAnimation from "../components/AutumnAnimation.component";
-import ContactForm from "../components/ContactForm.component";
+import AutumnAnimation from "../components/contact/AutumnAnimation.component";
+import ContactForm from "../components/contact/ContactForm.component";
 
 const useStyles = makeStyles((theme) => ({
   root: {
