@@ -7,10 +7,10 @@ const SliderSection = ({ imagePath }) => {
   const useStyles = makeStyles(() => ({
     root: {
       display: "flex",
-      width: "600px",
+      width: "100%",
       paddingTop: "56.25%", // 16:9 Aspect Ratio
       backgroundImage: `url(${
-        imagePath.path
+        imagePath && imagePath.path
           ? require(`../../assets/${imagePath.path}.png`)
           : require(`../../assets/no-image-white.png`)
       })`,
@@ -19,7 +19,7 @@ const SliderSection = ({ imagePath }) => {
   }));
 
   const classes = useStyles();
-  
+
   return <Box className={classes.root}></Box>;
 };
 

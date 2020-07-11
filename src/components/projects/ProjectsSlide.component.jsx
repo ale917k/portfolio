@@ -5,6 +5,8 @@ import SliderItem from "../global/SliderItem.component";
 
 import { makeStyles } from "@material-ui/core/styles";
 
+import { ReactComponent as ArrowSvg } from "../../assets/arrow.svg";
+
 const useStyles = makeStyles(() => ({
   root: {
     position: "relative",
@@ -85,49 +87,28 @@ const useStyles = makeStyles(() => ({
       },
     },
     "& .slick-prev, & .slick-next": {
-      fontSize: 0,
-      lineHeight: 0,
       position: "absolute",
       top: "50%",
       display: "block",
       width: "20px",
       height: "20px",
-      padding: 0,
       transform: "translate(0, -50%)",
-      cursor: "pointer",
-      color: "transparent",
-      border: "none",
-      outline: "none",
-      background: "transparent",
+      zIndex: 1,
       "&:hover, &:focus": {
-        color: "transparent",
-        outline: "none",
-        background: "transparent",
         "&:before": {
           opacity: 1,
         },
       },
-      "&.slick-disabled:before": {
-        opacity: 0.25,
-      },
       "&:before": {
-        fontSize: "20px",
-        lineHeight: 1,
-        opacity: 0.75,
-        color: "white",
+        content: '""',
+        opacity: 0.25,
       },
     },
     "& .slick-prev": {
-      left: "-25px",
-      "&:before": {
-        content: "←",
-      },
+      left: "25px",
     },
     "& .slick-next": {
-      right: "-25px",
-      "&:before": {
-        content: "→",
-      },
+      right: "25px",
     },
     // Dots
     "& .slick-dotted.slick-slider": {
@@ -201,6 +182,8 @@ const ProjectsSlide = ({ imgPreview }) => {
     speed: 200,
     slidesToShow: 1,
     slidesToScroll: 1,
+    nextArrow: <ArrowSvg />,
+    prevArrow: <ArrowSvg />,
   };
 
   return (
