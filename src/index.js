@@ -29,29 +29,32 @@ const theme = createMuiTheme({
     },
   },
   typography: {
-    fontFamily: "AvenirNextLTPro-Regular",
+    fontFamily: "'Montserrat', sans-serif",
     fontSize: 14,
     h1: {
-      fontFamily: "AvenirNextLTPro-Demi",
+      fontFamily: "'Raleway', sans-serif",
       fontSize: "3rem",
+      fontWeight: 700,
     },
     h2: {
-      fontFamily: "AvenirNextLTPro-Demi",
+      fontFamily: "'Raleway', sans-serif",
       fontSize: "2.25rem",
     },
     h3: {
-      fontFamily: "AvenirNextLTPro-Demi",
+      fontFamily: "'Raleway', sans-serif",
       fontSize: "1.75rem",
     },
     h4: {
+      fontFamily: "'Raleway', sans-serif",
       fontSize: "1.5rem",
     },
     h5: {
+      fontFamily: "'Raleway', sans-serif",
       fontSize: "1.25rem",
     },
     h6: {
+      fontFamily: "'Raleway', sans-serif",
       fontSize: "1.1rem",
-      fontWeight: '700',
     },
   },
 });

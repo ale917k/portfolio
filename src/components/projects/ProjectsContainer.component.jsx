@@ -37,7 +37,6 @@ const ProjectsContainer = () => {
       }, {});
 
     setActiveProject(selectedProject);
-    console.log(activeProject);
   };
 
   return (

@@ -37,7 +37,7 @@ const Logo = () => {
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      fontFamily: "AvenirNextLTPro-Demi",
+      fontFamily: "'Raleway', sans-serif",
       fontSize: 18,
       color:
         location.pathname === "/contact"
