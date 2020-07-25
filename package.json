@@ -5,11 +5,13 @@
   "dependencies": {
     "@material-ui/core": "^4.10.2",
     "@material-ui/lab": "^4.0.0-alpha.56",
+    "@steveeeie/react-page-transition": "^1.2.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "gsap": "^3.3.4",
     "react": "^16.13.1",
+    "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.1",
     "react-parallax-tilt": "^1.4.53",
     "react-particles-js": "^3.2.1",
@@ -17,6 +19,7 @@
     "react-scripts": "3.4.1",
     "react-slick": "^0.26.1",
     "react-spring": "^8.0.27",
+    "react-transition-group": "^4.4.1",
     "simplebar-react": "^2.2.1",
     "slick-carousel": "^1.8.1",
     "typewriter-effect": "^2.13.1"
@@ -37,6 +40,7 @@
       "not op_mini all"
     ],
     "development": [
+      "ie 11",
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
