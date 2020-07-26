@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from "react";
+import { renderEmail } from "react-html-email";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
@@ -7,22 +8,12 @@ import TextField from "@material-ui/core/TextField";
 import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
 
-import ErrorMessage from "../global/ErrorMessage.component";
+import ContactEmail from "./ContactEmail.component";
+import AlertMessage from "../global/AlertMessage.component";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    position: "absolute",
-    top: 0,
-    left: "50%",
-    height: "100%",
-    transform: "translateX(-50%)",
-  },
+  root: {},
   form: {
-    display: "none",
-    position: "absolute",
-    top: "50%",
-    right: "120px",
-    transform: "translateY(-50%)",
     alignSelf: "center",
     maxWidth: "400px",
     margin: "0 auto",
@@ -40,22 +31,19 @@ const ContactForm = () => {
   const classes = useStyles();
 
   const [form, setForm] = useState({
-    name: "",
-    username: "",
-    password: "",
-    showPassword: false,
+    email: "",
+    subject: "",
+    message: "",
   });
-  const [unauthorizedError, setUnauthorizedError] = useState(false);
-  const [userExistsError, setUserExistsError] = useState(false);
+  const [isEmailSent, setIsEmailSent] = useState(false);
   const [error, setError] = useState(false);
   const forceUpdate = useCallback(() => {
-    setUnauthorizedError(false);
-    setUserExistsError(false);
+    setIsEmailSent(false);
     setError(false);
   }, []);
 
   const handleChange = (event) => {
-    (unauthorizedError || userExistsError || error) && forceUpdate();
+    (isEmailSent || error) && forceUpdate();
     const { name, value } = event.target;
 
     setForm({ ...form, [name]: value });
@@ -64,7 +52,18 @@ const ContactForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    console.log(event);
+    const messageHtml = renderEmail(<ContactEmail {...form} />);
+
+    const data = await fetch("/send_email", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: form.email,
+        messageHtml,
+      }),
+    });
+    const isEmailSent = await data.json();
+    isEmailSent.error ? setError(true) : setIsEmailSent(true);
   };
 
   return (
@@ -72,41 +71,23 @@ const ContactForm = () => {
       <Card className={classes.form}>
         <Typography variant="h1">How can I help?</Typography>
 
-        {unauthorizedError && (
-          <ErrorMessage
-            error={unauthorizedError}
-            message="L'email e la password non corrispondono a nessun account. Per favore
-          riprova"
-          />
-        )}
-
-        {userExistsError && (
-          <ErrorMessage
-            error={userExistsError}
-            message="L'email scelta e' gia' registrata"
+        {isEmailSent && (
+          <AlertMessage
+            isActive={isEmailSent}
+            severity="success"
+            message="Email sent successfully!"
           />
         )}
 
         {error && (
-          <ErrorMessage
-            error={error}
-            message="Error: User POST on SignInUp Failed"
+          <AlertMessage
+            isActive={error}
+            severity="error"
+            message="Ooops, it seems we have a problem.. Please retry again"
           />
         )}
 
         <form onSubmit={handleSubmit}>
-          <TextField
-            className={classes.textField}
-            label="Name"
-            variant="outlined"
-            size="small"
-            name="name"
-            type="name"
-            onChange={handleChange}
-            value={form.name}
-            fullWidth
-            required
-          />
           <TextField
             className={classes.textField}
             label="Email"
@@ -115,10 +96,40 @@ const ContactForm = () => {
             name="email"
             type="email"
             onChange={handleChange}
-            value={form.username}
+            value={form.email}
             fullWidth
             required
           />
+          <TextField
+            className={classes.textField}
+            label="Subject"
+            variant="outlined"
+            size="small"
+            name="subject"
+            type="text"
+            onChange={handleChange}
+            value={form.subject}
+            fullWidth
+            required
+          />
+          <TextField
+            className={classes.textField}
+            label="Message"
+            variant="outlined"
+            size="small"
+            name="message"
+            type="text"
+            multiline
+            rows={5}
+            onChange={handleChange}
+            value={form.message}
+            fullWidth
+            required
+          />
+          <Typography variant="caption">
+            Reply will follow within the next 24h
+          </Typography>
+
           <Button variant="contained" color="primary" type="submit" fullWidth>
             Send
           </Button>

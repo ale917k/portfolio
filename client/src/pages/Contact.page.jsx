@@ -2,13 +2,14 @@ import React from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
 
-import AutumnAnimation from "../components/contact/AutumnAnimation.component";
 import ContactForm from "../components/contact/ContactForm.component";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxHeight: "100vh",
-    overflow: "hidden",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100vh",
   },
 }));
 
@@ -17,7 +18,6 @@ const Contact = () => {
 
   return (
     <div className={classes.root}>
-      <AutumnAnimation />
       <ContactForm />
     </div>
   );

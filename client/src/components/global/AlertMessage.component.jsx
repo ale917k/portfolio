@@ -9,16 +9,16 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const ErrorMessage = ({ error, message }) => {
+const AlertMessage = ({ isActive, severity, message }) => {
   const classes = useStyles();
 
   return (
-    <div className={`error${error ? " active" : ""}`}>
-      <Alert severity="error" className={classes.fullWidth}>
+    <div className={`error${isActive ? " active" : ""}`}>
+      <Alert severity={severity} className={classes.fullWidth}>
         {message}
       </Alert>
     </div>
   );
 };
 
-export default ErrorMessage;
+export default AlertMessage;
