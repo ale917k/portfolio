@@ -67,27 +67,27 @@ const Presentation = () => {
           </Typography>
 
           <Typography variant="h3" gutterBottom className={classes.typewriter}>
-            <Typewriter
-              onInit={(typewriter) => {
-                typewriter
-                  .typeString("I am a Graphic Designer")
-                  .pauseFor(2000)
-                  .deleteChars(16)
-                  .typeString("Web Developer")
-                  .pauseFor(2000)
-                  .deleteChars(13)
-                  .typeString("Dreamer")
-                  .pauseFor(2000)
-                  .deleteChars(9)
-                  .typeString("Alessio Petrin")
-                  .pauseFor(6000)
-                  .deleteAll()
-                  .start();
-              }}
-              options={{
-                loop: true,
-              }}
-            />
+                <Typewriter
+                  onInit={(typewriter) => {
+                    typewriter
+                      .typeString("I am a Graphic Designer")
+                      .pauseFor(2000)
+                      .deleteChars(16)
+                      .typeString("Web Developer")
+                      .pauseFor(2000)
+                      .deleteChars(13)
+                      .typeString("Dreamer")
+                      .pauseFor(2000)
+                      .deleteChars(9)
+                      .typeString("Alessio Petrin")
+                      .pauseFor(6000)
+                      .deleteAll()
+                      .start();
+                  }}
+                  options={{
+                    loop: true,
+                  }}
+                />
           </Typography>
         </div>
 

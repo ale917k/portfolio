@@ -1,7 +1,7 @@
 import React from "react";
 
 import Slider from "react-slick";
-import SliderItem from "../global/SliderItem.component";
+import SliderItem from "../../global/SliderItem.component";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
@@ -90,8 +90,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SliderSection = () => {
+const Carousel = () => {
   const classes = useStyles();
+
+  const slides = [
+    { title: "1" },
+    { title: "2" },
+    { title: "3" },
+    { title: "4" },
+    { title: "5" },
+    { title: "6" },
+    { title: "7" },
+    { title: "8" },
+  ];
 
   const settings = {
     arrows: false,
@@ -108,18 +119,13 @@ const SliderSection = () => {
     <Container className={classes.root}>
       <Box>
         <Slider {...settings}>
-          <SliderItem title="1" />
-          <SliderItem title="2" />
-          <SliderItem title="3" />
-          <SliderItem title="4" />
-          <SliderItem title="5" />
-          <SliderItem title="6" />
-          <SliderItem title="7" />
-          <SliderItem title="8" />
+          {slides.map((slide) => (
+            <SliderItem title={slide.title} />
+          ))}
         </Slider>
       </Box>
     </Container>
   );
 };
 
-export default SliderSection;
+export default Carousel;

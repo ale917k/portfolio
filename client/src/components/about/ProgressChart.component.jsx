@@ -134,22 +134,22 @@ const ProgressChart = ({ tech, valueAT, valueMT, valueAP, valueMP, link }) => {
           {tech}
         </Link>
       </Typography>
-      <PieChart width={400} height={400} className={classes.graph}>
-        <Pie
-          activeIndex={activeIndex}
-          activeShape={renderActiveShape}
-          data={data}
-          cx={200}
-          cy={200}
-          startAngle={270}
-          endAngle={-360}
-          innerRadius={60}
-          outerRadius={80}
-          fill="#8884d8"
-          dataKey="value"
-          onMouseEnter={onPieEnter}
-        />
-      </PieChart>
+          <PieChart width={400} height={400} className={classes.graph}>
+            <Pie
+              activeIndex={activeIndex}
+              activeShape={renderActiveShape}
+              data={data}
+              cx={200}
+              cy={200}
+              startAngle={270}
+              endAngle={-360}
+              innerRadius={60}
+              outerRadius={80}
+              fill="#8884d8"
+              dataKey="value"
+              onMouseEnter={onPieEnter}
+            />
+          </PieChart>
     </Box>
   );
 };

@@ -30,11 +30,13 @@ const useStyles = makeStyles((theme) => ({
 const ContactForm = () => {
   const classes = useStyles();
 
-  const [form, setForm] = useState({
+  const initialFormState = {
     email: "",
     subject: "",
     message: "",
-  });
+  };
+
+  const [form, setForm] = useState(initialFormState);
   const [isEmailSent, setIsEmailSent] = useState(false);
   const [error, setError] = useState(false);
   const forceUpdate = useCallback(() => {
@@ -64,6 +66,7 @@ const ContactForm = () => {
     });
     const isEmailSent = await data.json();
     isEmailSent.error ? setError(true) : setIsEmailSent(true);
+    setForm(initialFormState);
   };
 
   return (

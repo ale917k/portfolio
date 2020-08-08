@@ -1,117 +1,91 @@
-import React, { Fragment } from 'react';
-import { Switch, Route } from 'react-router-dom';
-import SimpleBarReact from "simplebar-react";
-// import { TransitionGroup, Transition } from "react-transition-group";
-// import {
-//   TimelineMax,
-//   Power1
-// } from "gsap";
-
-import About from './pages/About.page';
-import Contact from './pages/Contact.page';
-import Projects from './pages/Projects.page';
-import Styleguide from './pages/Styleguide.page';
-import PageNotFound from './pages/PageNotFound.page';
-import IEBackup from './pages/IEBackup.page';
+import React, { Fragment, lazy, Suspense, useEffect } from "react";
+import { Switch, Route } from "react-router-dom";
 
 import Cursor from "./components/global/Cursor.component";
 import Header from "./components/global/Header.component";
 
-import { makeStyles } from "@material-ui/core/styles";
-import "simplebar/src/simplebar.css";
+const Home = lazy(() => import("./pages/Home.page"));
+const About = lazy(() => import("./pages/About.page"));
+const Projects = lazy(() => import("./pages/Projects.page"));
+const Contact = lazy(() => import("./pages/Contact.page"));
+const Skills = lazy(() => import("./pages/Skills.page"));
+const Styleguide = lazy(() => import("./pages/Styleguide.page"));
+const PageNotFound = lazy(() => import("./pages/PageNotFound.page"));
+const IEBackup = lazy(() => import("./pages/IEBackup.page"));
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: theme.palette.common.white,
-  },
-}));
+// Check if user is on IE
+const isIE = /*@cc_on!@*/ false || !!document.documentMode;
 
-function App() {
-  const classes = useStyles();
-  // const { pathname, key } = useLocation();
+const routes = [
+  { path: "/", name: "Home", Component: Home },
+  { path: "/about", name: "About", Component: About },
+  { path: "/projects", name: "Projects", Component: Projects },
+  { path: "/contact", name: "Contact", Component: Contact },
+  { path: "/skills", name: "skills", Component: Skills },
+  { path: "/styleguide", name: "Styleguide", Component: Styleguide },
+];
 
-  onmousemove = e => {
-    const cursor = document.querySelector(".cursor");
-    cursor.style.left = `${e.pageX}px`;
-    cursor.style.top = `${e.pageY}px`;
+const App = () => {
+  useEffect(() => {
+    onmousemove = (e) => {
+      const cursor = document.querySelector(".cursor");
+      cursor.style.left = `${e.pageX}px`;
+      cursor.style.top = `${e.pageY}px`;
 
-    setTimeout(() => {
+      setTimeout(() => {
+        const bgCursor = document.querySelector(".bg-cursor");
+        bgCursor.style.left = `${e.pageX}px`;
+        bgCursor.style.top = `${e.pageY}px`;
+      }, 100);
+    };
+
+    onmousedown = () => {
       const bgCursor = document.querySelector(".bg-cursor");
-      bgCursor.style.left = `${e.pageX}px`;
-      bgCursor.style.top = `${e.pageY}px`;
-    }, 100);
-  };
+      bgCursor.classList.add("expand");
+    };
 
-  onmousedown = () => {
-    const bgCursor = document.querySelector(".bg-cursor");
-    bgCursor.classList.add('expand');
-  };
-
-  onmouseup = () => {
-    const bgCursor = document.querySelector(".bg-cursor");
-    bgCursor.classList.remove('expand');
-    bgCursor.classList.remove('pulse');
-  };
-
-  // const getHomeTimeline = (node, delay) => {
-  //   const timeline = new TimelineMax({ paused: true });
-  //   const texts = node.querySelectorAll('h1 > div');
-
-  //   timeline
-  //     .from(node, 0, { display: 'none', autoAlpha: 0, delay })
-  //     .staggerFrom(texts, 0.375, { autoAlpha: 0, x: -25, ease: Power1.easeOut }, 0.125);
-
-  //   return timeline
-  // }
-
-  // const play = (pathname, node, appears) => {
-  //   const delay = appears ? 0 : 0.5
-  //   let timeline
-
-  //   timeline = getHomeTimeline(node, delay)
-
-  //   timeline.play()
-  // }
-
-  // Check if user is on IE
-  const isIE = /*@cc_on!@*/false || !!document.documentMode;
+    onmouseup = () => {
+      const bgCursor = document.querySelector(".bg-cursor");
+      bgCursor.classList.remove("expand");
+      bgCursor.classList.remove("pulse");
+    };
+  });
 
   return (
     <Fragment>
       <Cursor />
-
-      {isIE ?
-        <IEBackup />
-        :
-        (
+      <Suspense fallback={<div></div>}>
+        {isIE ? (
+          <IEBackup />
+        ) : (
           <Switch>
-            <Route exact path='/(|about|projects|contact|styleguide)' render={() => (
-              <SimpleBarReact className={classes.root} style={{ maxHeight: '100vh' }}>
-                <Header />
+            <Route exact path="/(|about|skills|projects|contact|styleguide)">
+              <Header />
 
-                {/* <TransitionGroup component={null}>
-                  <Transition
-                    key={key}
-                    appear={true}
-                    onEnter={(node, appears) => play(pathname, node, appears)}
-                    timeout={{ enter: 750, exit: 0 }}
-                  > */}
-                    <Switch>
-                      <Route exact path='/(|about)' component={About} />
-                      <Route exact path='/projects' component={Projects} />
-                      <Route exact path='/contact' component={Contact} />
-                      <Route exact path='/styleguide' component={Styleguide} />
-                    </Switch>
-                  {/* </Transition> */}
-                {/* </TransitionGroup> */}
-              </SimpleBarReact>
-            )} />
+              {routes.map(({ path, Component }) => (
+                <Route key={path} exact path={path}>
+                  {/* {({ match }) => (
+                            <CSSTransition
+                              in={match != null}
+                              timeout={3000}
+                              classNames="page"
+                              unmountOnExit
+                            >
+                              <div className={`page ${classes.root}`}>
+                                <Component />
+                              </div>
+                            </CSSTransition>
+                          )} */}
+                  <Component />
+                </Route>
+              ))}
+            </Route>
             <Route path="*" component={PageNotFound} />
           </Switch>
-        )
-      }
-    </Fragment >
+        )}
+      </Suspense>
+    </Fragment>
   );
-}
+};
 
 export default App;
