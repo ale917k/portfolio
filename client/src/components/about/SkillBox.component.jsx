@@ -5,8 +5,6 @@ import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 
-import { expandCursor, shrinkCursor } from "../../js/cursor.actions";
-
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -180,8 +178,6 @@ const SkillBox = ({ title, strapLine, svgName, description, link }) => {
                 href={link}
                 rel="noopener noreferrer"
                 target="_blank"
-                onMouseOver={expandCursor}
-                onMouseOut={shrinkCursor}
               >
                 Read more
               </Link>

@@ -6,8 +6,6 @@ import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 
-import { expandCursor, shrinkCursor } from "../../js/cursor.actions";
-
 const renderActiveShape = ({
   cx,
   cy,
@@ -124,32 +122,26 @@ const ProgressChart = ({ tech, valueAT, valueMT, valueAP, valueMP, link }) => {
   return (
     <Box className={classes.root}>
       <Typography variant="h3" className={classes.title}>
-        <Link
-          href={link}
-          rel="noopener noreferrer"
-          target="_blank"
-          onMouseOver={expandCursor}
-          onMouseOut={shrinkCursor}
-        >
+        <Link href={link} rel="noopener noreferrer" target="_blank">
           {tech}
         </Link>
       </Typography>
-          <PieChart width={400} height={400} className={classes.graph}>
-            <Pie
-              activeIndex={activeIndex}
-              activeShape={renderActiveShape}
-              data={data}
-              cx={200}
-              cy={200}
-              startAngle={270}
-              endAngle={-360}
-              innerRadius={60}
-              outerRadius={80}
-              fill="#8884d8"
-              dataKey="value"
-              onMouseEnter={onPieEnter}
-            />
-          </PieChart>
+      <PieChart width={400} height={400} className={classes.graph}>
+        <Pie
+          activeIndex={activeIndex}
+          activeShape={renderActiveShape}
+          data={data}
+          cx={200}
+          cy={200}
+          startAngle={270}
+          endAngle={-360}
+          innerRadius={60}
+          outerRadius={80}
+          fill="#8884d8"
+          dataKey="value"
+          onMouseEnter={onPieEnter}
+        />
+      </PieChart>
     </Box>
   );
 };

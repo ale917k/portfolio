@@ -1,8 +1,5 @@
 import React from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
-import Tilt from "react-parallax-tilt";
-
-import { expandCursor, shrinkCursor } from "../../js/cursor.actions";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
@@ -17,7 +14,7 @@ const Logo = () => {
         textDecoration: "none",
       },
     },
-    tilt: {
+    logo: {
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
@@ -30,43 +27,20 @@ const Logo = () => {
           : theme.palette.common.white
       }`,
       borderRadius: "50%",
-      transformStyle: "preserve-3d",
-    },
-    content: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
       fontFamily: "'Raleway', sans-serif",
       fontSize: 18,
       color:
         location.pathname === "/contact"
           ? theme.palette.common.black
           : theme.palette.common.white,
-      transform: "translateZ(60px) scale(0.88)",
-      borderRadius: "50%",
     },
   }));
 
   const classes = useStyles();
 
   return (
-    <Link
-      className={classes.root}
-      component={RouterLink}
-      to="/about"
-      onMouseOver={expandCursor}
-      onMouseOut={shrinkCursor}
-    >
-      <Tilt
-        className={`${classes.tilt} logo`}
-        perspective={500}
-        glareEnable={true}
-        glareMaxOpacity={0.45}
-        scale={1.05}
-      >
-        <Box className={classes.content}>AP</Box>
-      </Tilt>
+    <Link className={classes.root} component={RouterLink} to="/about">
+      <Box className={classes.logo}>AP</Box>
     </Link>
   );
 };

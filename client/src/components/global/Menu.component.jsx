@@ -1,8 +1,6 @@
 import React from "react";
 import { useLocation, Link as RouterLink } from "react-router-dom";
 
-import { expandCursor, shrinkCursor } from "../../js/cursor.actions";
-
 import { makeStyles } from "@material-ui/core/styles";
 import Link from "@material-ui/core/Link";
 
@@ -46,32 +44,17 @@ const Menu = () => {
   return (
     <ul className={classes.root}>
       <li>
-        <Link
-          component={RouterLink}
-          to="/about"
-          onMouseOver={expandCursor}
-          onMouseOut={shrinkCursor}
-        >
+        <Link component={RouterLink} to="/about">
           ABOUT
         </Link>
       </li>
       <li>
-        <Link
-          component={RouterLink}
-          to="/projects"
-          onMouseOver={expandCursor}
-          onMouseOut={shrinkCursor}
-        >
+        <Link component={RouterLink} to="/projects">
           PROJECTS
         </Link>
       </li>
       <li>
-        <Link
-          component={RouterLink}
-          to="/contact"
-          onMouseOver={expandCursor}
-          onMouseOut={shrinkCursor}
-        >
+        <Link component={RouterLink} to="/contact">
           CONTACT
         </Link>
       </li>

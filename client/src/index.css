@@ -9,8 +9,7 @@ body {
 }
 
 body {
-  /* background-image: linear-gradient(to bottom, #F6F7EB 0%, #EFD6AC 100%); */
-  background-color: white;
+  background-color: #fafffd;
   margin: 0;
   height: 100vh;
 }
@@ -28,13 +27,4 @@ code {
 ::selection {
   color: #fafffd;
   background: #507dbc;
-}
-
-a,
-a:hover {
-  cursor: none;
-}
-
-.logo .glare-wrapper {
-  border-radius: 50%;
 }

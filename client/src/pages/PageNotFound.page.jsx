@@ -2,8 +2,6 @@ import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 
-import { expandCursor, shrinkCursor } from "../js/cursor.actions";
-
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
@@ -87,12 +85,7 @@ const PageNotFound = () => {
           className={`${classes.text} ${classes.subtitle}`}
         >
           ...let's go&nbsp;
-          <Link
-            component={RouterLink}
-            to="/about"
-            onMouseOver={expandCursor}
-            onMouseOut={shrinkCursor}
-          >
+          <Link component={RouterLink} to="/about">
             home
           </Link>
         </Typography>

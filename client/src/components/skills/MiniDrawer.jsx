@@ -18,6 +18,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
+import CloseRoundedIcon from "@material-ui/icons/CloseRounded";
 
 const drawerWidth = 240;
 
@@ -119,6 +120,9 @@ const MiniDrawer = (props) => {
           <Typography variant="h6" noWrap>
             Mini variant drawer
           </Typography>
+          <IconButton color="inherit" aria-label="close skills" edge="start">
+            <CloseRoundedIcon />
+          </IconButton>
         </Toolbar>
       </AppBar>
       <Drawer

@@ -1,7 +1,5 @@
 import React from "react";
 
-import { expandCursor, shrinkCursor } from "../js/cursor.actions";
-
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
@@ -9,12 +7,12 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(() => ({
   root: {
-    position: 'fixed',
+    position: "fixed",
     width: "100vw",
     height: "100vh",
     backgroundImage: `url(${require("../assets/galaxy/galaxyIE.svg")})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center center',
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center center",
     backgroundSize: "cover",
   },
   container: {},
@@ -45,8 +43,6 @@ const IEBackup = () => {
             href="https://www.theverge.com/2019/2/8/18216767/microsoft-internet-explorer-warning-compatibility-solution"
             rel="noopener noreferrer"
             target="_blank"
-            onMouseOver={expandCursor}
-            onMouseOut={shrinkCursor}
           >
             see this article
           </Link>

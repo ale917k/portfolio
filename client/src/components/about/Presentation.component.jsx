@@ -1,10 +1,12 @@
 import React from "react";
+import { Link as RouterLink } from "react-router-dom";
 
-import Typewriter from "typewriter-effect";
+// import Typewriter from "typewriter-effect";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
+import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -63,11 +65,14 @@ const Presentation = () => {
       <Container className={classes.container}>
         <div className={classes.text}>
           <Typography variant="h1" gutterBottom>
-            Hi!
+            Hi! Go to
+            <Link component={RouterLink} to="/skills">
+              Skills
+            </Link>
           </Typography>
 
           <Typography variant="h3" gutterBottom className={classes.typewriter}>
-                <Typewriter
+            {/* <Typewriter
                   onInit={(typewriter) => {
                     typewriter
                       .typeString("I am a Graphic Designer")
@@ -87,7 +92,7 @@ const Presentation = () => {
                   options={{
                     loop: true,
                   }}
-                />
+                /> */}
           </Typography>
         </div>
 
