@@ -1,8 +1,6 @@
 import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 
-// import Typewriter from "typewriter-effect";
-
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
@@ -43,11 +41,6 @@ const useStyles = makeStyles((theme) => ({
   text: {
     color: theme.palette.common.white,
   },
-  typewriter: {
-    "& > *": {
-      display: "inline-block",
-    },
-  },
   img: {
     height: "fit-content",
     position: "relative",
@@ -72,27 +65,7 @@ const Presentation = () => {
           </Typography>
 
           <Typography variant="h3" gutterBottom className={classes.typewriter}>
-            {/* <Typewriter
-                  onInit={(typewriter) => {
-                    typewriter
-                      .typeString("I am a Graphic Designer")
-                      .pauseFor(2000)
-                      .deleteChars(16)
-                      .typeString("Web Developer")
-                      .pauseFor(2000)
-                      .deleteChars(13)
-                      .typeString("Dreamer")
-                      .pauseFor(2000)
-                      .deleteChars(9)
-                      .typeString("Alessio Petrin")
-                      .pauseFor(6000)
-                      .deleteAll()
-                      .start();
-                  }}
-                  options={{
-                    loop: true,
-                  }}
-                /> */}
+            Lorem ipsum dolor sit amet
           </Typography>
         </div>
 

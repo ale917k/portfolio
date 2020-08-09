@@ -39,22 +39,22 @@ const useStyles = makeStyles(() => ({
     height: "110%",
     backgroundPosition: "center center",
     backgroundSize: "cover",
-    backgroundImage: `url(${require("../assets/galaxy/background.svg")})`,
+    backgroundImage: `url(${require("../assets/rocket-in-galaxy/background.svg")})`,
   },
   layer2: {
     height: "inherit",
     bottom: "-50px",
-    backgroundImage: `url(${require("../assets/galaxy/layer1.svg")})`,
+    backgroundImage: `url(${require("../assets/rocket-in-galaxy/layer1.svg")})`,
   },
   layer3: {
     height: "inherit",
     bottom: "-50px",
-    backgroundImage: `url(${require("../assets/galaxy/layer2.svg")})`,
+    backgroundImage: `url(${require("../assets/rocket-in-galaxy/layer2.svg")})`,
   },
   layer4: {
     height: "inherit",
     bottom: "-50px",
-    backgroundImage: `url(${require("../assets/galaxy/layer3.svg")})`,
+    backgroundImage: `url(${require("../assets/rocket-in-galaxy/layer3.svg")})`,
   },
 }));
 
@@ -85,7 +85,7 @@ const PageNotFound = () => {
           className={`${classes.text} ${classes.subtitle}`}
         >
           ...let's go&nbsp;
-          <Link component={RouterLink} to="/about">
+          <Link component={RouterLink} to="/">
             home
           </Link>
         </Typography>

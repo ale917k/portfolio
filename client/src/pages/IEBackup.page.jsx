@@ -10,7 +10,7 @@ const useStyles = makeStyles(() => ({
     position: "fixed",
     width: "100vw",
     height: "100vh",
-    backgroundImage: `url(${require("../assets/galaxy/galaxyIE.svg")})`,
+    backgroundImage: `url(${require("../assets/galaxyIE.svg")})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center center",
     backgroundSize: "cover",

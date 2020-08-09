@@ -39,7 +39,7 @@ const Logo = () => {
   const classes = useStyles();
 
   return (
-    <Link className={classes.root} component={RouterLink} to="/about">
+    <Link className={classes.root} component={RouterLink} to="/">
       <Box className={classes.logo}>AP</Box>
     </Link>
   );
