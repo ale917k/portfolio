@@ -33,7 +33,7 @@ const ProjectsList = ({ projects, activeProject, updateActiveProject }) => {
         >
           <Typography variant="h2">{`${project[1].development} - ${project[1].title}`}</Typography>
           <Typography
-            variant="subtitle1"
+            variant="body1"
             className={`${classes.description} ${
               activeProject.title === project[1].title ? "active" : ""
             }`}

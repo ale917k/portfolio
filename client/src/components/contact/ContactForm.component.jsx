@@ -102,6 +102,7 @@ const ContactForm = () => {
             value={form.email}
             fullWidth
             required
+            inputProps={{ "aria-label": "Email" }}
           />
           <TextField
             className={classes.textField}
@@ -114,6 +115,7 @@ const ContactForm = () => {
             value={form.subject}
             fullWidth
             required
+            inputProps={{ "aria-label": "Subject" }}
           />
           <TextField
             className={classes.textField}
@@ -128,6 +130,7 @@ const ContactForm = () => {
             value={form.message}
             fullWidth
             required
+            inputProps={{ "aria-label": "Message" }}
           />
           <Typography variant="caption">
             Reply will follow within the next 24h

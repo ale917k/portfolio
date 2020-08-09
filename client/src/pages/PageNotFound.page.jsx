@@ -81,7 +81,7 @@ const PageNotFound = () => {
           Looks like you are lost...
         </Typography>
         <Typography
-          variant="h6"
+          variant="h2"
           className={`${classes.text} ${classes.subtitle}`}
         >
           ...let's go&nbsp;

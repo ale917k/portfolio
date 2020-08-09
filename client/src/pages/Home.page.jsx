@@ -117,7 +117,7 @@ const Home = () => {
           >
             Welcome!
           </Typography>
-          <Typography variant="h3" gutterBottom className={classes.typewriter}>
+          <Typography variant="h2" gutterBottom className={classes.typewriter}>
             <Typewriter
               onInit={(typewriter) => {
                 typewriter
