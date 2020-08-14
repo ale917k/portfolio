@@ -3,6 +3,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
 import ContactForm from "../components/contact/ContactForm.component";
+import CssAnimatedBackground from "../components/global/CssAnimatedBackground.component";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,6 +20,7 @@ const Contact = () => {
   return (
     <div className={classes.root}>
       <ContactForm />
+      <CssAnimatedBackground />
     </div>
   );
 };

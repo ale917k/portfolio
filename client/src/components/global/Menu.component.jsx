@@ -24,7 +24,7 @@ const Menu = () => {
             location.pathname === "/contact"
               ? theme.palette.common.black
               : theme.palette.common.white,
-          fontWeight: theme.typography.fontWeightMedium,
+          fontWeight: theme.typography.fontWeightBold,
           padding: theme.spacing(2),
 
           "&:hover": {

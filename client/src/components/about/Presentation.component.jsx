@@ -6,31 +6,12 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 
+import CssAnimatedBackground from "../global/CssAnimatedBackground.component";
+
 const useStyles = makeStyles((theme) => ({
   root: {
-    background: theme.palette.secondary.main,
     width: "100vw",
     height: "100vh",
-    "&:before": {
-      content: '""',
-      width: 0,
-      height: 0,
-      position: "absolute",
-      left: 0,
-      bottom: 0,
-      borderBottom: `${theme.spacing(7)}px solid ${theme.palette.common.white}`,
-      borderRight: "50vw solid transparent",
-    },
-    "&:after": {
-      content: '""',
-      width: 0,
-      height: 0,
-      position: "absolute",
-      right: 0,
-      bottom: 0,
-      borderBottom: `${theme.spacing(7)}px solid ${theme.palette.common.white}`,
-      borderLeft: "50vw solid transparent",
-    },
   },
   container: {
     display: "flex",
@@ -75,6 +56,8 @@ const Presentation = () => {
           alt="Myself"
         />
       </Container>
+
+      <CssAnimatedBackground />
     </div>
   );
 };

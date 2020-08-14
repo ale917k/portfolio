@@ -36,7 +36,7 @@ const App = () => {
         const bgCursor = document.querySelector(".bg-cursor");
         bgCursor.style.left = `${e.pageX}px`;
         bgCursor.style.top = `${e.pageY}px`;
-      }, 100);
+      }, 50);
     };
 
     onmousedown = () => {

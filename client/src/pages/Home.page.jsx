@@ -115,12 +115,16 @@ const Home = () => {
             variant="h1"
             className={`${classes.text} ${classes.title}`}
           >
-            Welcome!
+            Welcome
           </Typography>
           <Typography variant="h2" gutterBottom className={classes.typewriter}>
             <Typewriter
               onInit={(typewriter) => {
                 typewriter
+                  .pauseFor(1000)
+                  .typeString("Nice to see you here!")
+                  .pauseFor(2000)
+                  .deleteChars(25)
                   .typeString("I am a Graphic Designer")
                   .pauseFor(2000)
                   .deleteChars(16)
