@@ -4,7 +4,7 @@ import { useSpring, animated } from "react-spring";
 import Typewriter from "typewriter-effect";
 
 import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
+import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -144,9 +144,15 @@ const Home = () => {
               }}
             />
           </Typography>
-          <Link component={RouterLink} to="/about">
+          <Button
+            component={RouterLink}
+            to="/about"
+            variant="contained"
+            color="secondary"
+            size="large"
+          >
             Know more about me
-          </Link>
+          </Button>
         </div>
       </animated.div>
     </div>

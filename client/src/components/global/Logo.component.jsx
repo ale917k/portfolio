@@ -1,47 +1,49 @@
 import React from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 
+import Fab from "@material-ui/core/Fab";
 import { makeStyles } from "@material-ui/core/styles";
-import Box from "@material-ui/core/Box";
-import Link from "@material-ui/core/Link";
+
+import { ReactComponent as LogoSvg } from "../../assets/logo.svg";
 
 const Logo = () => {
   const location = useLocation();
 
   const useStyles = makeStyles((theme) => ({
     root: {
-      "&:hover": {
-        textDecoration: "none",
-      },
-    },
-    logo: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      width: 60,
-      height: 60,
-      border: `1px solid ${
-        location.pathname === "/contact"
-          ? theme.palette.common.black
-          : theme.palette.common.white
-      }`,
-      borderRadius: "50%",
-      fontFamily: "'Raleway', sans-serif",
+      padding: theme.spacing(4.5),
+      backgroundColor: "transparent",
       fontSize: 18,
+      fontWeight: theme.typography.fontWeightBold,
       color:
-        location.pathname === "/contact"
+        location.pathname === "/projects"
           ? theme.palette.common.black
           : theme.palette.common.white,
+      "&:hover": {
+        backgroundColor: "transparent",
+      },
+    },
+    svg: {
+      fill:
+        location.pathname === "/projects"
+          ? theme.palette.common.black
+          : theme.palette.common.white,
+      width: "100%",
+      minWidth: "26px",
     },
   }));
 
   const classes = useStyles();
 
   return (
-    <Link className={classes.root} component={RouterLink} to="/">
-      <Box className={classes.logo}>AP</Box>
-    </Link>
+    <Fab
+      component={RouterLink}
+      to="/"
+      className={classes.root}
+      aria-label="logo"
+    >
+      <LogoSvg className={classes.svg} />
+    </Fab>
   );
 };
 

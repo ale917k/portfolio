@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
     justifyContent: "space-between",
+    alignItems: "center",
     paddingTop: theme.spacing(3),
   },
 }));

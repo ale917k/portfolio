@@ -9,6 +9,7 @@ body {
 }
 
 body {
+  position: relative;
   background-color: #fafffd;
   margin: 0;
   height: 100vh;

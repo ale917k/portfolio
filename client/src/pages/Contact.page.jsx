@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import ContactForm from "../components/contact/ContactForm.component";
 import CssAnimatedBackground from "../components/global/CssAnimatedBackground.component";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     display: "flex",
     alignItems: "center",

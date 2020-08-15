@@ -2,9 +2,9 @@ import React from "react";
 
 import { makeStyles } from "@material-ui/core";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    background: "linear-gradient(to right, #148BEF, #A90074)",
+    background: "linear-gradient(135deg, #148BEF, #A90074)",
     position: "absolute",
     top: 0,
     left: 0,
@@ -28,6 +28,7 @@ const useStyles = makeStyles(() => ({
     height: "25px",
     bottom: "-150px",
     background: "rgba(255, 255, 255, .2)",
+    borderRadius: theme.spacing(0.5),
     animation: "$animate 20s linear infinite",
   },
   "@keyframes animate": {

@@ -1,8 +1,8 @@
 import React from "react";
-import { useLocation, Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useLocation } from "react-router-dom";
 
 import { makeStyles } from "@material-ui/core/styles";
-import Link from "@material-ui/core/Link";
+import Button from "@material-ui/core/Button";
 
 const Menu = () => {
   const location = useLocation();
@@ -14,27 +14,21 @@ const Menu = () => {
       alignItems: "center",
       height: 60,
       margin: 0,
-
-      "& > li": {
-        listStyle: "none",
-
-        "& > a": {
-          textDecoration: "none",
-          color:
-            location.pathname === "/contact"
-              ? theme.palette.common.black
-              : theme.palette.common.white,
-          fontWeight: theme.typography.fontWeightBold,
-          padding: theme.spacing(2),
-
-          "&:hover": {
-            textDecoration: "none",
-          },
-        },
-
+      "& > a": {
+        color:
+          location.pathname === "/projects"
+            ? theme.palette.common.black
+            : theme.palette.common.white,
+        marginRight: theme.spacing(2),
         "&:last-of-type": {
-          paddingRight: 0,
+          marginRight: 0,
         },
+      },
+    },
+    contactButton: {
+      backgroundColor: "transparent",
+      "&:hover": {
+        backgroundColor: "transparent",
       },
     },
   }));
@@ -42,23 +36,22 @@ const Menu = () => {
   const classes = useStyles();
 
   return (
-    <ul className={classes.root}>
-      <li>
-        <Link component={RouterLink} to="/about">
-          ABOUT
-        </Link>
-      </li>
-      <li>
-        <Link component={RouterLink} to="/projects">
-          PROJECTS
-        </Link>
-      </li>
-      <li>
-        <Link component={RouterLink} to="/contact">
-          CONTACT
-        </Link>
-      </li>
-    </ul>
+    <div className={classes.root}>
+      <Button component={RouterLink} to="/about">
+        ABOUT
+      </Button>
+      <Button component={RouterLink} to="/projects">
+        PROJECTS
+      </Button>
+      <Button
+        component={RouterLink}
+        variant="contained"
+        to="/contact"
+        className={classes.contactButton}
+      >
+        CONTACT ME
+      </Button>
+    </div>
   );
 };
 

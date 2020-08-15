@@ -27,27 +27,29 @@ const routes = [
 
 const App = () => {
   useEffect(() => {
+    const cursor = document.querySelector(".cursor");
+    const bgCursor = document.querySelector(".bg-cursor");
+
     onmousemove = (e) => {
-      const cursor = document.querySelector(".cursor");
       cursor.style.left = `${e.pageX}px`;
       cursor.style.top = `${e.pageY}px`;
 
       setTimeout(() => {
-        const bgCursor = document.querySelector(".bg-cursor");
         bgCursor.style.left = `${e.pageX}px`;
         bgCursor.style.top = `${e.pageY}px`;
       }, 50);
     };
 
     onmousedown = () => {
-      const bgCursor = document.querySelector(".bg-cursor");
       bgCursor.classList.add("expand");
     };
 
     onmouseup = () => {
-      const bgCursor = document.querySelector(".bg-cursor");
       bgCursor.classList.remove("expand");
-      bgCursor.classList.remove("pulse");
+    };
+
+    onmouseout = () => {
+      bgCursor.classList.remove("expand");
     };
   });
 

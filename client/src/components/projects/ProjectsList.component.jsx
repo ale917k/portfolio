@@ -9,7 +9,6 @@ const useStyles = makeStyles((theme) => ({
   },
   li: {
     listStyle: "none",
-    color: theme.palette.common.white,
   },
   title: {},
   description: {

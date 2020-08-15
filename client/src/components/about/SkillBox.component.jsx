@@ -96,7 +96,6 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 800,
     margin: 0,
     paddingBottom: "20px",
-
     "&:before": {
       content: '""',
       position: "absolute",

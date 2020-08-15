@@ -19,45 +19,45 @@ const theme = createMuiTheme({
   palette: {
     type: "light",
     common: {
-      black: "#011627",
-      white: "#FAFFFD",
+      black: "#0A0908",
+      white: "#F4F4F9",
     },
     primary: {
-      main: "#507DBC",
+      main: "#148BEF",
     },
     secondary: {
-      main: "#AA4465",
+      main: "#A90074",
     },
     background: {
-      default: "#FAFFFD",
+      default: "#F4F4F9",
     },
   },
   typography: {
-    fontFamily: "'Montserrat', sans-serif",
-    fontSize: 14,
+    fontFamily: "'Poppins', sans-serif",
+    fontSize: 16,
     h1: {
-      fontFamily: "'Raleway', sans-serif",
-      fontSize: "3rem",
+      fontFamily: "'Alegreya Sans SC', sans-serif",
+      fontSize: "4rem",
       fontWeight: 700,
     },
     h2: {
-      fontFamily: "'Raleway', sans-serif",
+      fontFamily: "'Alegreya Sans SC', sans-serif",
       fontSize: "2.25rem",
     },
     h3: {
-      fontFamily: "'Raleway', sans-serif",
+      fontFamily: "'Alegreya Sans SC', sans-serif",
       fontSize: "1.75rem",
     },
     h4: {
-      fontFamily: "'Raleway', sans-serif",
+      fontFamily: "'Alegreya Sans SC', sans-serif",
       fontSize: "1.5rem",
     },
     h5: {
-      fontFamily: "'Raleway', sans-serif",
+      fontFamily: "'Alegreya Sans SC', sans-serif",
       fontSize: "1.25rem",
     },
     h6: {
-      fontFamily: "'Raleway', sans-serif",
+      fontFamily: "'Alegreya Sans SC', sans-serif",
       fontSize: "1.1rem",
     },
   },

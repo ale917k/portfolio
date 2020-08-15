@@ -5,28 +5,26 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   root: {
     position: "absolute",
-    height: theme.spacing(0.5),
-    width: theme.spacing(0.5),
+    height: theme.spacing(0.6),
+    width: theme.spacing(0.6),
     borderRadius: "50%",
     transform: "translateX(-50%) translateY(-50%)",
     pointerEvents: "none",
     zIndex: "9999",
-
     "&.cursor": {
       backgroundColor: theme.palette.common.white,
       mixBlendMode: "difference !important",
     },
-
     "&.bg-cursor": {
-      border: `1px solid ${theme.palette.common.white}`,
-      width: theme.spacing(5),
-      height: theme.spacing(5),
+      backgroundColor: theme.palette.common.white,
+      width: theme.spacing(6),
+      height: theme.spacing(6),
       transition: `width ${theme.transitions.duration.short}ms ${theme.transitions.easing.easeInOut}, height ${theme.transitions.duration.short}ms ${theme.transitions.easing.easeInOut}`,
       mixBlendMode: "difference !important",
-
+      opacity: 0.1,
       "&.expand": {
-        width: theme.spacing(8),
-        height: theme.spacing(8),
+        width: theme.spacing(9),
+        height: theme.spacing(9),
       },
     },
   },
