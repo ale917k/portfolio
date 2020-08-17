@@ -10,7 +10,7 @@ body {
 
 body {
   position: relative;
-  background-color: #fafffd;
+  background-color: #f4f4f9;
   margin: 0;
   height: 100vh;
 }
@@ -21,11 +21,11 @@ code {
 }
 
 ::-moz-selection {
-  color: #fafffd;
-  background: #507dbc;
+  color: #f4f4f9;
+  background: #148bef;
 }
 
 ::selection {
-  color: #fafffd;
-  background: #507dbc;
+  color: #f4f4f9;
+  background: #148bef;
 }

@@ -7,7 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import { ReactComponent as ArrowSvg } from "../../assets/arrow.svg";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     position: "relative",
     display: "block",
@@ -62,7 +62,9 @@ const useStyles = makeStyles(() => ({
         visibility: "hidden",
       },
       "& .slick-list": {
-        background: `#fff url(${require("../../assets/projects/ajax-loader.gif")}) center center no-repeat`,
+        background: `${
+          theme.palette.common.white
+        } url(${require("../../assets/projects/ajax-loader.gif")}) center center no-repeat`,
       },
     },
     // Each single Slider Element
@@ -92,7 +94,6 @@ const useStyles = makeStyles(() => ({
       display: "block",
       width: "20px",
       height: "20px",
-      transform: "translate(0, -50%)",
       zIndex: 1,
       "&:hover, &:focus": {
         "&:before": {
@@ -106,84 +107,41 @@ const useStyles = makeStyles(() => ({
     },
     "& .slick-prev": {
       left: "25px",
+      transform: "translateY(-50%) rotate(-90deg)",
     },
     "& .slick-next": {
       right: "25px",
-    },
-    // Dots
-    "& .slick-dotted.slick-slider": {
-      marginBottom: "30px",
-    },
-    "& .slick-dots": {
-      position: "absolute",
-      bottom: "-25px",
-      display: "block",
-      width: "100%",
-      padding: 0,
-      margin: 0,
-      listStyle: "none",
-      textAlign: "center",
-      "& li": {
-        position: "relative",
-        display: "inline-block",
-        width: "20px",
-        height: "20px",
-        margin: "0 5px",
-        padding: 0,
-        cursor: "pointer",
-        "& button": {
-          fontSize: 0,
-          lineHeight: 0,
-          display: "block",
-          width: "20px",
-          height: "20px",
-          padding: "5px",
-          cursor: "pointer",
-          color: "transparent",
-          border: 0,
-          outline: "none",
-          background: "transparent",
-          "&:hover, &:focus": {
-            outline: "none",
-            "&:before": {
-              opacity: 1,
-            },
-          },
-          "&:before": {
-            fontSize: "6px",
-            lineHeight: "20px",
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "20px",
-            height: "20px",
-            content: "•",
-            textAlign: "center",
-            opacity: 0.25,
-            color: "black",
-          },
-        },
-        "&.slick-active button:before": {
-          opacity: 0.75,
-          color: "black",
-        },
-      },
+      transform: "translateY(-50%) rotate(90deg)",
     },
   },
 }));
+
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <ArrowSvg className={className} style={{ ...style }} onClick={onClick} />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <ArrowSvg className={className} style={{ ...style }} onClick={onClick} />
+  );
+}
 
 const ProjectsSlide = ({ imgPreview }) => {
   const classes = useStyles();
 
   const settings = {
     arrows: true,
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 200,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <ArrowSvg />,
-    prevArrow: <ArrowSvg />,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
   };
 
   return (

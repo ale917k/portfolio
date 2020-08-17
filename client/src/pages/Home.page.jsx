@@ -17,17 +17,16 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   layer: {
-    position: "absolute",
+    position: "fixed",
     backgroundRepeat: "no-repeat",
-    backgroundPosition: "center bottom",
+    backgroundPosition: "center center",
     willChange: "transform",
     width: "130%",
   },
   layer1: {
     height: "110%",
-    backgroundPosition: "center center",
-    backgroundSize: "cover",
     backgroundImage: `url(${require("../assets/abstract-galaxy/background.svg")})`,
+    backgroundSize: "cover",
   },
   layer2: {
     height: "inherit",
@@ -44,16 +43,22 @@ const useStyles = makeStyles((theme) => ({
   layer5: {
     height: "150%",
     backgroundImage: `url(${require("../assets/abstract-galaxy/layer4.svg")})`,
+    [theme.breakpoints.down("sm")]: {
+      width: "175%",
+    },
+    [theme.breakpoints.down("xs")]: {
+      width: "300vw",
+    },
   },
   textWrapper: {
     top: "50vh",
-    left: "50vw",
+    left: "35%",
     position: "relative",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-evenly",
     alignItems: "center",
-    width: "30vw",
+    width: "30%",
     height: "50vh",
   },
   text: {
@@ -62,11 +67,18 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontWeight: 900,
+    [theme.breakpoints.down("md")]: {
+      fontSize: "3.5rem",
+    },
   },
   typewriter: {
     "& > *": {
       display: "inline-block",
       color: theme.palette.common.white,
+      textAlign: "center",
+      [theme.breakpoints.down("md")]: {
+        fontSize: "2rem",
+      },
     },
   },
 }));
