@@ -2,10 +2,9 @@ import React from "react";
 
 import Slider from "react-slick";
 import SliderItem from "../global/SliderItem.component";
+import SlideArrow from "./SlideArrow.component";
 
 import { makeStyles } from "@material-ui/core/styles";
-
-import { ReactComponent as ArrowSvg } from "../../assets/arrow.svg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -67,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
         } url(${require("../../assets/projects/ajax-loader.gif")}) center center no-repeat`,
       },
     },
-    // Each single Slider Element
+    // Each Slider Element
     "& .slick-slide": {
       display: "none",
       float: "left",
@@ -82,53 +81,8 @@ const useStyles = makeStyles((theme) => ({
         },
       },
     },
-    // Arrows
-    "& .slick-arrow": {
-      "&.slick-hidden": {
-        display: "none",
-      },
-    },
-    "& .slick-prev, & .slick-next": {
-      position: "absolute",
-      top: "50%",
-      display: "block",
-      width: "20px",
-      height: "20px",
-      zIndex: 1,
-      "&:hover, &:focus": {
-        "&:before": {
-          opacity: 1,
-        },
-      },
-      "&:before": {
-        content: '""',
-        opacity: 0.25,
-      },
-    },
-    "& .slick-prev": {
-      left: "25px",
-      transform: "translateY(-50%) rotate(-90deg)",
-    },
-    "& .slick-next": {
-      right: "25px",
-      transform: "translateY(-50%) rotate(90deg)",
-    },
   },
 }));
-
-function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <ArrowSvg className={className} style={{ ...style }} onClick={onClick} />
-  );
-}
-
-function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <ArrowSvg className={className} style={{ ...style }} onClick={onClick} />
-  );
-}
 
 const ProjectsSlide = ({ imgPreview }) => {
   const classes = useStyles();
@@ -140,8 +94,8 @@ const ProjectsSlide = ({ imgPreview }) => {
     speed: 200,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: <SlideArrow />,
+    prevArrow: <SlideArrow />,
   };
 
   return (
