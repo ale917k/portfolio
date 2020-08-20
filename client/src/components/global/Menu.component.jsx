@@ -15,6 +15,7 @@ const Menu = () => {
       height: 60,
       margin: 0,
       "& > a": {
+        pointerEvents: "all",
         color:
           location.pathname === "/projects"
             ? theme.palette.common.black

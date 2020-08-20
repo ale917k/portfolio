@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     width: "100%",
     zIndex: 1,
+    pointerEvents: "none",
   },
   container: {
     display: "flex",

@@ -15,6 +15,7 @@ const Logo = () => {
       backgroundColor: "transparent",
       fontSize: 18,
       fontWeight: theme.typography.fontWeightBold,
+      pointerEvents: "all",
       color:
         location.pathname === "/projects"
           ? theme.palette.common.black
