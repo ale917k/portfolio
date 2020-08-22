@@ -3,7 +3,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
 import ContactForm from "../components/contact/ContactForm.component";
-import CssAnimatedBackground from "../components/global/CssAnimatedBackground.component";
+// import CssAnimatedBackground from "../components/global/CssAnimatedBackground.component";
+import Papers3dBackground from "../components/contact/Papers3dBackground/Papers3dBackground.component";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -20,7 +21,8 @@ const Contact = () => {
   return (
     <div className={classes.root}>
       <ContactForm />
-      <CssAnimatedBackground />
+      {/* <CssAnimatedBackground /> */}
+      <Papers3dBackground />
     </div>
   );
 };
