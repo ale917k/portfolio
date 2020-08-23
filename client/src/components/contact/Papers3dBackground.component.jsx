@@ -90,7 +90,7 @@ const Papers3dBackgrond = () => {
   }, [container, gridSize]);
 
   return (
-    <div className={classes.root} ref={(el) => (container = el)}>
+    <div className={classes.root} ref={container}>
       <div
         className={classes.grid}
         ref={(el) => (grid = el)}

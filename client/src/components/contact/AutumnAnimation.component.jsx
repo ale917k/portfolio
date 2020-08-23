@@ -258,9 +258,7 @@ const AutumnAnimation = () => {
         .add(enterGreeting(), "scene-enter-greeting");
   }, [svg]);
 
-  return (
-    <AutumnAnimationSvg className={classes.root} ref={(el) => (svg = el)} />
-  );
+  return <AutumnAnimationSvg className={classes.root} ref={svg} />;
 };
 
 export default AutumnAnimation;
