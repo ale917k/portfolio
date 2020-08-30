@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link as RouterLink } from "react-router-dom";
+
+import { gsap } from "gsap";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
@@ -35,16 +37,50 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "450px",
     width: "40%",
     marginTop: "auto",
+    clipPath: "polygon(0 0, 100% 0%, 100% 0%, 0% 0%)",
   },
 }));
 
 const About = () => {
   const classes = useStyles();
+  let container = useRef(null);
+  let text = useRef(null);
+  let buttons = useRef(null);
+  let image = useRef(null);
+
+  const enterText = () => {
+    let textTl = gsap.timeline();
+
+    textTl.from(text.current, {
+      duration: 1.5,
+      translateY: 50,
+      opacity: 0,
+    });
+    return textTl;
+  };
+
+  const enterImage = () => {
+    let imageTl = gsap.timeline();
+
+    imageTl.to(image.current, {
+      clipPath: "polygon(0 0, 100% 0%, 100% 100%, 0% 100%)",
+      transformOrigin: "top",
+    });
+    return imageTl;
+  };
+
+  useEffect(() => {
+    let masterTl = gsap.timeline();
+    container &&
+      masterTl
+        .add(enterText(), "scene-enter-text")
+        .add(enterImage(), "scene-enter-image");
+  }, [container]);
 
   return (
     <div className={classes.root}>
-      <Container className={classes.container}>
-        <div className={classes.text}>
+      <Container className={classes.container} ref={container}>
+        <div className={classes.text} ref={text}>
           <Typography variant="h1" gutterBottom>
             ABOUT ME
           </Typography>
@@ -67,7 +103,7 @@ const About = () => {
           </Typography>
         </div>
 
-        <div className={classes.links}>
+        <div className={classes.links} ref={buttons}>
           <Button component={RouterLink} variant="outlined" to="/skills">
             Skills
           </Button>
@@ -80,6 +116,7 @@ const About = () => {
           className={classes.img}
           src={require("../assets/me.png")}
           alt="Myself"
+          ref={image}
         />
       </Container>
 

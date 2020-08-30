@@ -134,7 +134,7 @@ const Home = () => {
               onInit={(typewriter) => {
                 typewriter
                   .pauseFor(1000)
-                  .typeString("Nice to see you here!")
+                  .typeString("Nice to see you around!")
                   .pauseFor(2000)
                   .deleteChars(25)
                   .typeString("I am a Graphic Designer")
