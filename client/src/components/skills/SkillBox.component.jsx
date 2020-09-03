@@ -7,12 +7,10 @@ import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
-    justifyContent: "space-between",
     position: "relative",
-    width: "340px",
+    width: "100%",
     height: "255px",
-    color: theme.palette.common.white,
+    borderRadius: theme.spacing(0.5),
     transformStyle: "preserve-3d",
     perspective: "1000px",
     backfaceVisibility: "hidden",
@@ -35,9 +33,9 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     width: "100%",
     height: "100%",
-    background: theme.palette.common.black,
     transformStyle: "preserve-3d",
     perspective: "1000px",
+    backgroundColor: "#ffffff",
   },
   innerContainer: {
     display: "flex",
@@ -52,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
       position: "absolute",
       width: "50px",
       height: "120px",
-      borderColor: theme.palette.common.white,
+      borderColor: theme.palette.common.black,
       opacity: ".4",
       zIndex: 10,
     },
@@ -75,7 +73,6 @@ const useStyles = makeStyles((theme) => ({
     left: 0,
     width: "100%",
     height: "100%",
-    background: theme.palette.common.black,
     opacity: ".4",
     zIndex: 3,
   },
@@ -103,12 +100,11 @@ const useStyles = makeStyles((theme) => ({
       bottom: "10px",
       width: "20px",
       height: "2px",
-      background: "#00bcd4",
+      background: theme.palette.primary.main,
       marginLeft: "-10px",
     },
   },
   strapLine: {
-    color: "#fff",
     textTransform: "uppercase",
     fontSize: "10px",
     letterSpacing: "2px",
@@ -121,14 +117,21 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     zIndex: 0,
     transform: "rotateY(180deg)",
+    "& img": {
+      width: "100%",
+      height: "100%",
+    },
   },
   icon: {
-    maxWidth: "120px",
+    width: theme.spacing(15),
+    height: theme.spacing(15),
     margin: "0 auto",
-    paddingBottom: "20px",
+    paddingBottom: theme.spacing(3),
   },
   link: {
     display: "block",
+    width: "fit-content",
+    margin: "0 auto",
   },
 }));
 
@@ -137,12 +140,7 @@ const SkillBox = ({ title, strapLine, svgName, description, link }) => {
 
   return (
     <Box className={classes.root}>
-      <Box
-        className={`${classes.content} ${classes.front}`}
-        style={{
-          backgroundImage: `url(${require("../../assets/redSmoke.png")})`,
-        }}
-      >
+      <Box className={`${classes.content} ${classes.front}`}>
         <Box className={classes.innerContainer}>
           <Box className={classes.overlay} />
           <Box className={classes.inner}>
@@ -159,16 +157,14 @@ const SkillBox = ({ title, strapLine, svgName, description, link }) => {
           </Box>
         </Box>
       </Box>
-      <Box
-        className={`${classes.content} ${classes.back}`}
-        style={{
-          backgroundImage: `url(${require("../../assets/blueSmoke.png")})`,
-        }}
-      >
+      <Box className={`${classes.content} ${classes.back}`}>
         <Box className={classes.innerContainer}>
           <Box className={classes.inner}>
             <Box className={classes.icon}>
-              <img src={require(`../../assets/${svgName}.svg`)} alt={svgName} />
+              <img
+                src={require(`../../assets/skills/${svgName}.svg`)}
+                alt={svgName}
+              />
             </Box>
             <Typography variant="body2" gutterBottom>
               {description}

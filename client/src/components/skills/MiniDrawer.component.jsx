@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
 import clsx from "clsx";
+import SimpleBarReact from "simplebar-react";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -16,9 +18,20 @@ import ListItemText from "@material-ui/core/ListItemText";
 
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
 import CloseRoundedIcon from "@material-ui/icons/CloseRounded";
+import LineStyleRoundedIcon from "@material-ui/icons/LineStyleRounded";
+import StorageRoundedIcon from "@material-ui/icons/StorageRounded";
+import CameraRoundedIcon from "@material-ui/icons/CameraRounded";
+import BackupRoundedIcon from "@material-ui/icons/BackupRounded";
+import CachedRoundedIcon from "@material-ui/icons/CachedRounded";
+import UpdateRoundedIcon from "@material-ui/icons/UpdateRounded";
+
+const navLinks = [
+  { title: "Frontend", Icon: LineStyleRoundedIcon },
+  { title: "Backend", Icon: StorageRoundedIcon },
+  { title: "Design", Icon: CameraRoundedIcon },
+  { title: "Other", Icon: BackupRoundedIcon },
+];
 
 const drawerWidth = 240;
 
@@ -78,9 +91,18 @@ const useStyles = makeStyles((theme) => ({
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
   },
+  closeSkills: {
+    position: "absolute",
+    right: theme.spacing(2),
+  },
+  scrollbar: {
+    maxHeight: '100vh',
+    backgroundColor: theme.palette.common.white,
+  },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
+    height: "100vh",
   },
 }));
 
@@ -118,9 +140,16 @@ const MiniDrawer = (props) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Mini variant drawer
+            Skills
           </Typography>
-          <IconButton color="inherit" aria-label="close skills" edge="start">
+          <IconButton
+            color="inherit"
+            aria-label="close skills"
+            edge="start"
+            component={RouterLink}
+            to="/about"
+            className={classes.closeSkills}
+          >
             <CloseRoundedIcon />
           </IconButton>
         </Toolbar>
@@ -145,31 +174,45 @@ const MiniDrawer = (props) => {
         </div>
         <Divider />
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
+          {navLinks.map(({ title, Icon }) => (
+            <ListItem
+              button
+              key={title}
+              component={RouterLink}
+              to={`/skills/${title.toLowerCase()}`}
+            >
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                <Icon />
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={title} />
             </ListItem>
           ))}
         </List>
         <Divider />
         <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <ListItem button component={RouterLink} to="/skills/progress">
+            <ListItemIcon>
+              <CachedRoundedIcon />
+            </ListItemIcon>
+            <ListItemText primary="Progress" />
+          </ListItem>
+        </List>
+        <Divider />
+        <List>
+          <ListItem button component={RouterLink} to="/skills/next">
+            <ListItemIcon>
+              <UpdateRoundedIcon />
+            </ListItemIcon>
+            <ListItemText primary="What's Next" />
+          </ListItem>
         </List>
       </Drawer>
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-        {props.children}
-      </main>
+      <SimpleBarReact className={classes.scrollbar}>
+        <main className={classes.content}>
+          <div className={classes.toolbar} />
+          {props.children}
+        </main>
+      </SimpleBarReact>
     </div>
   );
 };

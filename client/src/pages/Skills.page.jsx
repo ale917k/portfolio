@@ -1,48 +1,42 @@
 import React from "react";
+import { Switch, Route } from "react-router-dom";
+import { CSSTransition } from "react-transition-group";
+
+import MiniDrawer from "../components/skills/MiniDrawer.component";
+import SkillsSection from "../components/skills/SkillsSection.component";
+import SkillsProgressSection from "../components/skills/SkillsProgressSection.component";
 
 import SKILLS_TECH from "../js/SKILLS_TECH";
-
-import SkillsSection from "../components/about/SkillsSection.component";
-// import SkillsProgressSection from "../components/about/SkillsProgressSection.component";
-
-import MiniDrawer from "../components/skills/MiniDrawer";
 
 const Skills = () => {
   return (
     <MiniDrawer>
-      <SkillsSection {...SKILLS_TECH.front} />
+      <Switch>
+        <Route
+          exact
+          path="/skills/progress"
+          component={SkillsProgressSection}
+        />
+        {Object.entries(SKILLS_TECH).map(([key, value]) => (
+          <Route key={key} exact path={`/skills/${key}`}>
+            {({ match }) => (
+              <CSSTransition
+                in={match != null}
+                timeout={3000}
+                classNames="skillPage"
+                unmountOnExit
+              >
+                <div className="skillPage">
+                  <SkillsSection {...value} />
+                </div>
+              </CSSTransition>
+            )}
+          </Route>
+        ))}
+        {/* <Route path="*" component={PageNotFound} /> */}
+      </Switch>
     </MiniDrawer>
   );
 };
 
 export default Skills;
-
-/* <SkillsSection {...SKILLS_TECH.front} />
-      <SkillsSection {...SKILLS_TECH.back} />
-      <SkillsSection {...SKILLS_TECH.tech} />
-      <SkillsProgressSection /> */
-
-// <Switch>
-//   <Route exact path="/(|about|projects|contact|styleguide)">
-//     <Header />
-
-//     {routes.map(({ path, Component }) => (
-//       <Route key={path} exact path={path}>
-//         {/* {({ match }) => (
-//                   <CSSTransition
-//                     in={match != null}
-//                     timeout={3000}
-//                     classNames="page"
-//                     unmountOnExit
-//                   >
-//                     <div className={`page ${classes.root}`}>
-//                       <Component />
-//                     </div>
-//                   </CSSTransition>
-//                 )} */}
-//         <Component />
-//       </Route>
-//     ))}
-//   </Route>
-//   <Route path="*" component={PageNotFound} />
-// </Switch>;

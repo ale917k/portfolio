@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 152.1 152">
+  <defs>
+    <path id="c" d="M139.8 0h-27.5c-6.7 0-12.2 5.5-12.2 12.2V48h-40c-6.6 0-12 5.4-12 12v40H12c-6.6 0-12 5.4-12 12v28c0 6.6 5.4 12 12 12h127.8c6.7 0 12.2-5.5 12.2-12.2V12.2C152 5.5 146.5 0 139.8 0z"/>
+  </defs>
+  <linearGradient id="a" x2="152.1" y1="77.32" y2="77.32" gradientTransform="matrix(1 0 0 -1 0 153.32)" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#fff" stop-opacity=".1"/>
+    <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+  </linearGradient>
+  <path fill="url(#a)" d="M139.8 0h-27.7c-6.7 0-12.2 5.5-12.2 12.2V48H59.8C53.3 48 48 53.3 48 59.9V100H11.9C5.3 100 0 105.3 0 111.9v28c0 6.6 5.3 11.9 11.9 12.1h128c6.7 0 12.2-5.5 12.2-12.2V12.2C152 5.5 146.5 0 139.8 0z"/>
+  <linearGradient id="b" x2="152.1" y1="77.32" y2="77.32" gradientTransform="matrix(1 0 0 -1 0 153.32)" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#fff" stop-opacity=".1"/>
+    <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+  </linearGradient>
+  <path fill="url(#b)" d="M139.8 0h-27.7c-6.7 0-12.2 5.5-12.2 12.2V48H59.8C53.3 48 48 53.3 48 59.9V100H11.9C5.3 100 0 105.3 0 111.9v28c0 6.6 5.3 11.9 11.9 12.1h128c6.7 0 12.2-5.5 12.2-12.2V12.2C152 5.5 146.5 0 139.8 0z"/>
+  <defs>
+    <use xlink:href="#c"/>
+  </defs>
+  <clipPath id="d">
+    <use overflow="visible" xlink:href="#c"/>
+  </clipPath>
+  <g clip-path="url(#d)">
+    <path fill="#f57c00" d="M139.8 0h-27.5c-6.7 0-12.2 5.5-12.2 12.2V152h39.7c6.7 0 12.2-5.5 12.2-12.2V12.2C152 5.5 146.5 0 139.8 0z"/>
+    <image width="125" height="129" opacity=".2" overflow="visible" transform="translate(-9 39)" xlink:href="D219C75C03CDCBF6.png"/>
+    <path fill="#ffc107" d="M48 60v40H12c-6.6 0-12 5.4-12 12v28c0 6.6 5.4 12 12 12h88V48H60c-6.6 0-12 5.4-12 12z"/>
+  </g>
+  <defs>
+    <use id="e" xlink:href="#c"/>
+  </defs>
+  <clipPath id="f">
+    <use overflow="visible" xlink:href="#e"/>
+  </clipPath>
+  <linearGradient id="g" x1="74.25" x2="148.36" y1="79.07" y2="4.96" gradientTransform="matrix(1 0 0 -1 0 153.32)" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#bf360c" stop-opacity=".2"/>
+    <stop offset="1" stop-color="#bf360c" stop-opacity=".02"/>
+  </linearGradient>
+  <path fill="url(#g)" d="M100 48v104h39.7c6.7 0 12.2-5.5 12.2-12.2V100L100 48z" clip-path="url(#f)"/>
+  <defs>
+    <use id="h" xlink:href="#c"/>
+  </defs>
+  <clipPath id="i">
+    <use overflow="visible" xlink:href="#h"/>
+  </clipPath>
+  <path fill="#fff" d="M60 49h40v-1H60c-6.6 0-12 5.4-12 12v1c0-6.6 5.4-12 12-12z" clip-path="url(#i)" opacity=".2"/>
+  <defs>
+    <use id="j" xlink:href="#c"/>
+  </defs>
+  <clipPath id="k">
+    <use overflow="visible" xlink:href="#j"/>
+  </clipPath>
+  <path fill="#fff" d="M12 101h36v-1H12c-6.6 0-12 5.4-12 12v1c0-6.6 5.4-12 12-12z" clip-path="url(#k)" opacity=".2"/>
+  <g>
+    <defs>
+      <use id="l" xlink:href="#c"/>
+    </defs>
+    <clipPath id="m">
+      <use overflow="visible" xlink:href="#l"/>
+    </clipPath>
+    <path fill="#fff" d="M139.8 0h-27.5c-6.7 0-12.2 5.5-12.2 12.2v1c0-6.7 5.5-12.2 12.2-12.2h27.5c6.7 0 12.2 5.5 12.2 12.2v-1C152 5.5 146.5 0 139.8 0z" clip-path="url(#m)" opacity=".2"/>
+  </g>
+  <g>
+    <defs>
+      <use id="n" xlink:href="#c"/>
+    </defs>
+    <clipPath id="o">
+      <use overflow="visible" xlink:href="#n"/>
+    </clipPath>
+    <path fill="#bf360c" d="M139.8 151H12c-6.6 0-12-5.4-12-12v1c0 6.6 5.4 12 12 12h127.7c6.7 0 12.2-5.5 12.2-12.2v-1c.1 6.7-5.4 12.2-12.1 12.2z" clip-path="url(#o)" opacity=".2"/>
+  </g>
+  <linearGradient id="p" x1="50.969" x2="149.295" y1="102.289" y2="3.963" gradientTransform="matrix(1 0 0 -1 0 153.32)" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#fff" stop-opacity=".1"/>
+    <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+  </linearGradient>
+  <path fill="url(#p)" d="M139.8 0h-27.5c-6.7 0-12.2 5.5-12.2 12.2V48h-40c-6.6 0-12 5.4-12 12v40H12c-6.6 0-12 5.4-12 12v28c0 6.6 5.4 12 12 12h127.8c6.7 0 12.2-5.5 12.2-12.2V12.2C152 5.5 146.5 0 139.8 0z"/>
+</svg>

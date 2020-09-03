@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect, useRef, lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
-
 import { CSSTransition } from "react-transition-group";
 import { gsap } from "gsap";
 
@@ -15,18 +14,23 @@ const About = lazy(() => import("./pages/About.page"));
 const Projects = lazy(() => import("./pages/Projects.page"));
 const Contact = lazy(() => import("./pages/Contact.page"));
 const Skills = lazy(() => import("./pages/Skills.page"));
+const Playground = lazy(() => import("./pages/Playground.page"));
 const Styleguide = lazy(() => import("./pages/Styleguide.page"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound.page"));
 
 // Check if user is on IE
 const isIE = /*@cc_on!@*/ false || !!document.documentMode;
 
-const routes = [
+const flexRoutes = [
+  { path: "/skills", name: "Skills", Component: Skills },
+  { path: "/playground", name: "Playground", Component: Playground },
+];
+
+const exactRoutes = [
   { path: "/", name: "Home", Component: Home },
   { path: "/about", name: "About", Component: About },
   { path: "/projects", name: "Projects", Component: Projects },
   { path: "/contact", name: "Contact", Component: Contact },
-  { path: "/skills", name: "skills", Component: Skills },
   { path: "/styleguide", name: "Styleguide", Component: Styleguide },
 ];
 
@@ -124,7 +128,16 @@ const App = () => {
         </Suspense>
       ) : (
         <Switch>
-          <Route exact path="/(|about|skills|projects|contact|styleguide)">
+          <Route path="/(skills|playground)">
+            {flexRoutes.map(({ path, Component }) => (
+              <Route key={path} path={path}>
+                <Suspense fallback={<div></div>}>
+                  <Component />
+                </Suspense>
+              </Route>
+            ))}
+          </Route>
+          <Route exact path="/(|about|projects|contact|styleguide)">
             <Header />
             <ul className={classes.pageTransition} ref={pageTransition}>
               <li></li>
@@ -133,7 +146,7 @@ const App = () => {
               <li></li>
               <li></li>
             </ul>
-            {routes.map(({ path, Component }) => (
+            {exactRoutes.map(({ path, Component }) => (
               <Route key={path} exact path={path}>
                 {({ match }) => (
                   <CSSTransition

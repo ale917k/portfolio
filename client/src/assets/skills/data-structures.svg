@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 189 190">
+  <g fill="none" fill-rule="evenodd">
+    <path stroke="#009AD3" stroke-linecap="square" stroke-width="8" d="M76.5 50.5l-35 46"/>
+    <path stroke="#009AD3" stroke-linecap="square" stroke-width="8" d="M97.5 57.5v40"/>
+    <path stroke="#009AD3" stroke-linecap="square" stroke-width="8" d="M118.5 51.5l39 48"/>
+    <path stroke="#009AD3" stroke-linecap="square" stroke-width="8" d="M166 132l7.5 35.5"/>
+    <path stroke="#009AD3" stroke-linecap="square" stroke-width="8" d="M55.5 122.5l60 49"/>
+    <path stroke="#009AD3" stroke-linecap="square" stroke-width="8" d="M41.5 129.5l17 38"/>
+    <path stroke="#009AD3" stroke-linecap="square" stroke-width="8" d="M26.5 129.5l-11 38"/>
+    <circle cx="98" cy="26" r="26" fill="#009AD3"/>
+    <circle cx="97" cy="104" r="20" fill="#009AD3"/>
+    <circle cx="35" cy="104" r="20" fill="#009AD3"/>
+    <circle cx="14.5" cy="170.5" r="14.5" fill="#009AD3"/>
+    <circle cx="60.5" cy="175.5" r="14.5" fill="#009AD3"/>
+    <circle cx="119.5" cy="174.5" r="14.5" fill="#009AD3"/>
+    <circle cx="174.5" cy="170.5" r="14.5" fill="#009AD3"/>
+    <circle cx="159" cy="104" r="20" fill="#009AD3"/>
+  </g>
+</svg>

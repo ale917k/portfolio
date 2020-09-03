@@ -156,7 +156,7 @@ const Menu = () => {
           to="/contact"
           className={classes.contactButton}
         >
-          CONTACT ME
+          CONTACT
         </Button>
       </div>
       <div className={classes.mobileMenu} onClick={() => toggleMobileMenu()}>

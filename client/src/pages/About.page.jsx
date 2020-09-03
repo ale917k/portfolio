@@ -104,7 +104,11 @@ const About = () => {
         </div>
 
         <div className={classes.links} ref={buttons}>
-          <Button component={RouterLink} variant="outlined" to="/skills">
+          <Button
+            component={RouterLink}
+            variant="outlined"
+            to="/skills/frontend"
+          >
             Skills
           </Button>
           <Button component={RouterLink} variant="outlined" to="/playground">
