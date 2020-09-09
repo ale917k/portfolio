@@ -7,7 +7,7 @@ import Logo from "./Logo.component";
 import Menu from "./Menu.component";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  header: {
     position: "absolute",
     width: "100%",
     zIndex: 1,
@@ -25,7 +25,7 @@ const Header = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.header}>
       <Container className={classes.container}>
         <Logo />
         <Menu />

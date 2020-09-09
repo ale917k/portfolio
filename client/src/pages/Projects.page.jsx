@@ -7,7 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import ProjectsContainer from "../components/projects/ProjectsContainer.component";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  projectsPage: {
     display: "flex",
     justifyContent: "center",
     width: "100vw",
@@ -42,7 +42,7 @@ const Projects = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.projectsPage}>
       <Particles className={classes.particles} params={particlesOptions} />
       <ProjectsContainer />
     </div>

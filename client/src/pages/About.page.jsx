@@ -11,7 +11,7 @@ import Button from "@material-ui/core/Button";
 import CssAnimatedBackground from "../components/global/CssAnimatedBackground.component";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  aboutPage: {
     width: "100vw",
     height: "100vh",
   },
@@ -78,7 +78,7 @@ const About = () => {
   }, [container]);
 
   return (
-    <div className={classes.root}>
+    <div className={classes.aboutPage}>
       <Container className={classes.container} ref={container}>
         <div className={classes.text} ref={text}>
           <Typography variant="h1" gutterBottom>

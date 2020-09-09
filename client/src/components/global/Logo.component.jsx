@@ -10,7 +10,7 @@ const Logo = () => {
   const location = useLocation();
 
   const useStyles = makeStyles((theme) => ({
-    root: {
+    logo: {
       padding: theme.spacing(4.5),
       backgroundColor: "transparent",
       fontSize: 18,
@@ -40,7 +40,7 @@ const Logo = () => {
     <Fab
       component={RouterLink}
       to="/"
-      className={classes.root}
+      className={classes.logo}
       aria-label="logo"
     >
       <LogoSvg className={classes.svg} />

@@ -5,7 +5,7 @@ import ArrowForwardIosRoundedIcon from "@material-ui/icons/ArrowForwardIosRounde
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  sliderArrow: {
     display: "block",
     position: "absolute",
     top: 0,
@@ -60,13 +60,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SlideArrow = (props) => {
+const SliderArrow = (props) => {
   const classes = useStyles();
   const { className, style, onClick } = props;
 
   return (
     <div
-      className={`${classes.root} ${className}`}
+      className={`${classes.sliderArrow} ${className}`}
       style={{ ...style }}
       onClick={onClick}
     >
@@ -79,4 +79,4 @@ const SlideArrow = (props) => {
   );
 };
 
-export default SlideArrow;
+export default SliderArrow;

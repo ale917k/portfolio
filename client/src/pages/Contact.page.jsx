@@ -6,7 +6,7 @@ import ContactForm from "../components/contact/ContactForm.component";
 import Papers3dBackground from "../components/contact/Papers3dBackground.component";
 
 const useStyles = makeStyles(() => ({
-  root: {
+  contactPage: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -18,7 +18,7 @@ const Contact = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.contactPage}>
       <ContactForm />
       <Papers3dBackground />
     </div>

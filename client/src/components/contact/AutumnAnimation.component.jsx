@@ -15,7 +15,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { ReactComponent as AutumnAnimationSvg } from "../../assets/autumn_card.svg";
 
 const useStyles = makeStyles(() => ({
-  root: {
+  autumnAnimation: {
     maxHeight: "100vh",
     minHeight: "100vh",
   },
@@ -258,7 +258,7 @@ const AutumnAnimation = () => {
         .add(enterGreeting(), "scene-enter-greeting");
   }, [svg]);
 
-  return <AutumnAnimationSvg className={classes.root} ref={svg} />;
+  return <AutumnAnimationSvg className={classes.autumnAnimation} ref={svg} />;
 };
 
 export default AutumnAnimation;

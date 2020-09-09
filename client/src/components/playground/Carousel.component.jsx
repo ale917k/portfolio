@@ -8,7 +8,7 @@ import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  carousel: {
     padding: `${theme.spacing(10)}px 0`,
     "& .slick-slider": {
       position: "relative",
@@ -116,7 +116,7 @@ const Carousel = () => {
   };
 
   return (
-    <Container className={classes.root}>
+    <Container className={classes.carousel}>
       <Box>
         <Slider {...settings}>
           {slides.map((slide) => (

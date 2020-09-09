@@ -3,7 +3,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  cssAnimatedBackground: {
     background: "linear-gradient(135deg, #148BEF, #A90074)",
     position: "absolute",
     top: 0,
@@ -94,7 +94,7 @@ const CssAnimatedBackground = () => {
   ];
 
   return (
-    <div className={classes.root}>
+    <div className={classes.cssAnimatedBackground}>
       <ul className={classes.ul}>
         {animatedBoxes.map((box) => (
           <li

@@ -12,7 +12,7 @@ const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const useStyles = makeStyles((theme) => ({
-    root: {
+    menu: {
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
@@ -59,6 +59,19 @@ const Menu = () => {
         backgroundColor: "transparent",
       },
     },
+    mobileMenu: {
+      position: "relative",
+      display: "none",
+      justifyContent: "center",
+      alignItems: "center",
+      width: "80px",
+      height: "80px",
+      cursor: "pointer",
+      pointerEvents: "all",
+      [theme.breakpoints.down("xs")]: {
+        display: "flex",
+      },
+    },
     mobileMenuOpen: {
       [theme.breakpoints.down("xs")]: {
         clipPath: "circle(1500px at 100% -10%)",
@@ -79,19 +92,6 @@ const Menu = () => {
       width: "100vw",
       height: "100vh",
       backgroundColor: theme.palette.primary.main,
-    },
-    mobileMenu: {
-      position: "relative",
-      display: "none",
-      justifyContent: "center",
-      alignItems: "center",
-      width: "80px",
-      height: "80px",
-      cursor: "pointer",
-      pointerEvents: "all",
-      [theme.breakpoints.down("xs")]: {
-        display: "flex",
-      },
     },
     menuBurger: {
       width: "50px",
@@ -138,7 +138,7 @@ const Menu = () => {
   };
 
   return (
-    <div className={classes.root}>
+    <div className={classes.menu}>
       <div
         className={clsx(classes.navLinks, {
           [classes.mobileMenuOpen]: isMenuOpen,

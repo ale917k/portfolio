@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  skillBox: {
     position: "relative",
     width: "100%",
     height: "255px",
@@ -139,7 +139,7 @@ const SkillBox = ({ title, strapLine, svgName, description, link }) => {
   const classes = useStyles();
 
   return (
-    <Box className={classes.root}>
+    <Box className={classes.skillBox}>
       <Box className={`${classes.content} ${classes.front}`}>
         <Box className={classes.innerContainer}>
           <Box className={classes.overlay} />

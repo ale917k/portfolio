@@ -8,7 +8,7 @@ import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(() => ({
-  root: {
+  pageNotFound: {
     width: "100vw",
     height: "100vh",
     display: "flex",
@@ -27,7 +27,6 @@ const useStyles = makeStyles(() => ({
   title: {
     fontWeight: 900,
   },
-  subtitle: {},
   layer: {
     position: "absolute",
     backgroundRepeat: "no-repeat",
@@ -73,7 +72,7 @@ const PageNotFound = () => {
 
   return (
     <div
-      className={classes.root}
+      className={classes.pageNotFound}
       onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
     >
       <Container className={classes.container}>
@@ -82,7 +81,7 @@ const PageNotFound = () => {
         </Typography>
         <Typography
           variant="h2"
-          className={`${classes.text} ${classes.subtitle}`}
+          className={classes.text}
         >
           ...let's go&nbsp;
           <Link component={RouterLink} to="/">

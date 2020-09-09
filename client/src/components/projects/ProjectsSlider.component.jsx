@@ -2,12 +2,12 @@ import React from "react";
 
 import Slider from "react-slick";
 import SliderItem from "../global/SliderItem.component";
-import SlideArrow from "./SlideArrow.component";
+import SliderArrow from "./SliderArrow.component";
 
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  projectsSlider: {
     position: "relative",
     display: "block",
     width: "50%",
@@ -84,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ProjectsSlide = ({ imgPreview }) => {
+const ProjectsSlider = ({ imgPreview }) => {
   const classes = useStyles();
 
   const settings = {
@@ -94,12 +94,12 @@ const ProjectsSlide = ({ imgPreview }) => {
     speed: 200,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <SlideArrow />,
-    prevArrow: <SlideArrow />,
+    nextArrow: <SliderArrow />,
+    prevArrow: <SliderArrow />,
   };
 
   return (
-    <Slider {...settings} className={classes.root}>
+    <Slider {...settings} className={classes.projectsSlider}>
       {imgPreview.map((path) => (
         <SliderItem key={path} imagePath={path} />
       ))}
@@ -107,4 +107,4 @@ const ProjectsSlide = ({ imgPreview }) => {
   );
 };
 
-export default ProjectsSlide;
+export default ProjectsSlider;

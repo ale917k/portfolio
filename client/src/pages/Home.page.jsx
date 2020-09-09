@@ -8,7 +8,7 @@ import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  homePage: {
     width: "100vw",
     height: "100vh",
     display: "flex",
@@ -99,7 +99,7 @@ const Home = () => {
 
   return (
     <div
-      className={classes.root}
+      className={classes.homePage}
       onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
     >
       <animated.div

@@ -36,7 +36,7 @@ const navLinks = [
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  miniDrawer: {
     display: "flex",
   },
   appBar: {
@@ -119,7 +119,7 @@ const MiniDrawer = (props) => {
   };
 
   return (
-    <div className={classes.root}>
+    <div className={classes.miniDrawer}>
       <CssBaseline />
       <AppBar
         position="fixed"

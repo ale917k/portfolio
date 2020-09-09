@@ -3,9 +3,9 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 
-const SliderSection = ({ imagePath }) => {
+const SliderItem = ({ imagePath }) => {
   const useStyles = makeStyles(() => ({
-    root: {
+    sliderItem: {
       display: "flex",
       width: "100%",
       paddingTop: "56.25%", // 16:9 Aspect Ratio
@@ -20,7 +20,7 @@ const SliderSection = ({ imagePath }) => {
 
   const classes = useStyles();
 
-  return <Box className={classes.root}></Box>;
+  return <Box className={classes.sliderItem}></Box>;
 };
 
-export default SliderSection;
+export default SliderItem;

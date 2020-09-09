@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  cursor: {
     position: "absolute",
     height: theme.spacing(0.6),
     width: theme.spacing(0.6),
@@ -35,8 +35,8 @@ const Cursor = () => {
 
   return (
     <Fragment>
-      <div className={`cursor ${classes.root}`}></div>
-      <div className={`bg-cursor ${classes.root}`}></div>
+      <div className={`cursor ${classes.cursor}`}></div>
+      <div className={`bg-cursor ${classes.cursor}`}></div>
     </Fragment>
   );
 };

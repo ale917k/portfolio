@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     textAlign: "center",
   },
-  subTitle: {
+  subtitle: {
     textAlign: "center",
     lineHeight: `${theme.spacing(3)}px`,
     marginTop: theme.spacing(3),
@@ -32,7 +32,7 @@ const SkillsSection = ({ title, subtitle, skills }) => {
       <Typography variant="h2" className={classes.title}>
         {title}
       </Typography>
-      <Typography variant="subtitle1" className={classes.subTitle}>
+      <Typography variant="subtitle1" className={classes.subtitle}>
         {subtitle}
       </Typography>
       <Box className={classes.skillsContainer}>

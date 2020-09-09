@@ -4,13 +4,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  projectsList: {
     width: "40%",
   },
   li: {
     listStyle: "none",
   },
-  title: {},
   description: {
     display: "none",
     "&.active": {
@@ -23,7 +22,7 @@ const ProjectsList = ({ projects, activeProject, updateActiveProject }) => {
   const classes = useStyles();
 
   return (
-    <ul className={classes.root}>
+    <ul className={classes.projectsList}>
       {Object.entries(projects).map((project) => (
         <li
           key={project[0]}

@@ -12,8 +12,7 @@ import ContactEmail from "./ContactEmail.component";
 import AlertMessage from "../global/AlertMessage.component";
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
-  form: {
+  contactForm: {
     alignSelf: "center",
     maxWidth: "400px",
     margin: "0 auto",
@@ -70,8 +69,8 @@ const ContactForm = () => {
   };
 
   return (
-    <Container className={classes.root}>
-      <Card className={classes.form}>
+    <Container>
+      <Card className={classes.contactForm}>
         <Typography variant="h1">How can I help?</Typography>
 
         {isEmailSent && (

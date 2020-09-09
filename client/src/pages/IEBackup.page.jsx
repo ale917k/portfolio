@@ -6,7 +6,7 @@ import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(() => ({
-  root: {
+  ieBackupPage: {
     position: "fixed",
     width: "100vw",
     height: "100vh",
@@ -16,13 +16,17 @@ const useStyles = makeStyles(() => ({
     backgroundSize: "cover",
   },
   container: {},
+  text: {},
+  title: {},
+  subtitle: {},
+  link: {},
 }));
 
 const IEBackup = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.ieBackupPage}>
       <Container className={classes.container}>
         <Typography variant="h1" className={`${classes.text} ${classes.title}`}>
           Houston, we got a problem!

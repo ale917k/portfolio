@@ -13,7 +13,7 @@ const routes = [
 ];
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  pageTransition: {
     "&.page-enter": {
       opacity: 0,
       transform: "scale(1.1)",
@@ -49,7 +49,7 @@ const PageTransition = () => {
               classNames="page"
               unmountOnExit
             >
-              <div className={`page ${classes.root}`}>
+              <div className={`page ${classes.pageTransition}`}>
                 <Component />
               </div>
             </CSSTransition>

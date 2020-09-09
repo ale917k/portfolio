@@ -5,7 +5,7 @@ import { TimelineMax, Power2, Sine } from "gsap";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  papers3dBackground: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -90,7 +90,7 @@ const Papers3dBackgrond = () => {
   }, [container, gridSize]);
 
   return (
-    <div className={classes.root} ref={container}>
+    <div className={classes.papers3dBackground} ref={container}>
       <div
         className={classes.grid}
         ref={(el) => (grid = el)}

@@ -5,17 +5,17 @@ import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 
 import ProjectsList from "./ProjectsList.component";
-import ProjectsSlide from "./ProjectsSlide.component";
+import ProjectsSlider from "./ProjectsSlider.component";
 
 import PROJECTS from "../../js/PROJECTS";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  projectsContainer: {
     position: "absolute",
     top: `${theme.spacing(3) + 60}px`,
     height: "100%",
   },
-  box: {
+  container: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
@@ -40,14 +40,14 @@ const ProjectsContainer = () => {
   };
 
   return (
-    <Container className={classes.root}>
-      <Box className={classes.box}>
+    <Container className={classes.projectsContainer}>
+      <Box className={classes.container}>
         <ProjectsList
           projects={PROJECTS}
           activeProject={activeProject}
           updateActiveProject={updateActiveProject}
         />
-        <ProjectsSlide imgPreview={activeProject.imgPreview} />
+        <ProjectsSlider imgPreview={activeProject.imgPreview} />
       </Box>
     </Container>
   );

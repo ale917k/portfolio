@@ -87,7 +87,7 @@ const renderActiveShape = ({
 };
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  progressChart: {
     position: "relative",
   },
   title: {
@@ -120,7 +120,7 @@ const ProgressChart = ({ tech, valueAT, valueMT, valueAP, valueMP, link }) => {
   };
 
   return (
-    <Box className={classes.root}>
+    <Box className={classes.progressChart}>
       <Typography variant="h3" className={classes.title}>
         <Link href={link} rel="noopener noreferrer" target="_blank">
           {tech}

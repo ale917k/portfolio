@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     textAlign: "center",
   },
-  subTitle: {
+  subtitle: {
     textAlign: "center",
     lineHeight: `${theme.spacing(3)}px`,
     marginTop: theme.spacing(3),
@@ -30,17 +30,15 @@ const SkillsProgressSection = () => {
 
   return (
     <Fragment>
-      <Box className={classes.heading}>
-        <Typography variant="h2" className={classes.title}>
-          Skills In Progress
-        </Typography>
-        <Typography variant="subtitle1" className={classes.subTitle}>
-          When we talk about development, there is always something to learn.
-          Technologies are getting old or deprecated every couple of years, to
-          give space to new faster and lighter technologies. This is what I'm
-          keeping myself busy with.
-        </Typography>
-      </Box>
+      <Typography variant="h2" className={classes.title}>
+        Skills In Progress
+      </Typography>
+      <Typography variant="subtitle1" className={classes.subtitle}>
+        When we talk about development, there is always something to learn.
+        Technologies are getting old or deprecated every couple of years, to
+        give space to new faster and lighter technologies. This is what I'm
+        keeping myself busy with.
+      </Typography>
       <Box className={classes.skillsContainer}>
         {SKILL_PROGRESS.map((skill) => (
           <ProgressChart key={skill.tech} {...skill} />
