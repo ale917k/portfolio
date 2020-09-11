@@ -334,7 +334,7 @@ const SKILLS_TECH = {
   next: {
     title: "What's next",
     subtitle:
-      "The explosive love for learning new technologies, always brings me such related curiosity that is almost impossible to ignore. These are the fields where I'll most likely spend most of my time on for the next months / years.",
+      "The explosive love for learning new technologies, always brings me such related curiosity that is almost impossible to ignore. These are the fields I'll most likely spend most of my time on next months / years.",
     skills: [
       {
         title: "NextJS",

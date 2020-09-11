@@ -8,7 +8,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Cursor from "./components/global/Cursor.component";
 import Header from "./components/global/Header.component";
 
-import IEBackup from "./pages/IEBackup.page";
 const Home = lazy(() => import("./pages/Home.page"));
 const About = lazy(() => import("./pages/About.page"));
 const Projects = lazy(() => import("./pages/Projects.page"));
@@ -17,6 +16,7 @@ const Skills = lazy(() => import("./pages/Skills.page"));
 const Playground = lazy(() => import("./pages/Playground.page"));
 const Styleguide = lazy(() => import("./pages/Styleguide.page"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound.page"));
+const IEBackup = lazy(() => import("./pages/IEBackup.page"));
 
 // Check if user is on IE
 const isIE = /*@cc_on!@*/ false || !!document.documentMode;
