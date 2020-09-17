@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     left: 0,
     margin: 0,
-    zIndex: 10,
+    zIndex: theme.zIndex.tooltip,
     listStyle: "none",
     paddingLeft: 0,
     pointerEvents: "none",

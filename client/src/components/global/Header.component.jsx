@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   header: {
     position: "absolute",
     width: "100%",
-    zIndex: 1,
+    zIndex: theme.zIndex.drawer,
     pointerEvents: "none",
   },
   container: {

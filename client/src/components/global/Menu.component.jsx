@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import clsx from "clsx";
-
-// import { TimelineMax } from "gsap";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 
+import useIsFirstMount from "../../js/useIsFirstMount";
+
 const Menu = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isFirstMount = useIsFirstMount();
 
   const useStyles = makeStyles((theme) => ({
     menu: {
@@ -31,8 +32,8 @@ const Menu = () => {
         width: "100vw",
         height: "100vh",
         backgroundColor: theme.palette.primary.main,
-        clipPath: "circle(100px at 100% -10%)",
-        WebkitClipPath: "circle(100px at 100% -10%)",
+        clipPath: "circle(100px at 100% -20%)",
+        WebkitClipPath: "circle(100px at 100% -20%)",
         transition: theme.transitions.create(["all"], {
           easing: theme.transitions.easing.easeInOut,
           duration: theme.transitions.duration.enteringScreen,
@@ -74,8 +75,8 @@ const Menu = () => {
     },
     mobileMenuOpen: {
       [theme.breakpoints.down("xs")]: {
-        clipPath: "circle(1500px at 100% -10%)",
-        WebkitClipPath: "circle(1500px at 100% -10%)",
+        clipPath: "circle(1500px at 100% -20%)",
+        WebkitClipPath: "circle(1500px at 100% -20%)",
         "& > a": {
           display: "block",
           maxWidth: "200px",
@@ -94,8 +95,8 @@ const Menu = () => {
       backgroundColor: theme.palette.primary.main,
     },
     menuBurger: {
-      width: "50px",
-      height: "6px",
+      width: "40px",
+      height: "4px",
       background: theme.palette.common.white,
       borderRadius: "5px",
       boxShadow: "0 2px 5px rgba(255, 101, 47, .2)",
@@ -103,7 +104,7 @@ const Menu = () => {
         content: '""',
         position: "absolute",
         width: "50px",
-        height: "6px",
+        height: "4px",
         background: theme.palette.common.white,
         borderRadius: "5px",
         boxShadow: "0 2px 5px rgba(255, 101, 47, .2)",
@@ -136,6 +137,14 @@ const Menu = () => {
   const toggleMobileMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  useEffect(() => {
+    !isFirstMount &&
+      setTimeout(() => {
+        setIsMenuOpen(false);
+      }, 1000);
+    // eslint-disable-next-line
+  }, [location]);
 
   return (
     <div className={classes.menu}>
