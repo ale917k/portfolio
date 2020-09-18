@@ -19,6 +19,8 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: "100%",
     overflow: "hidden",
+    margin: 0,
+    padding: 0,
   },
   li: {
     position: "absolute",
