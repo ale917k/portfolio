@@ -8,9 +8,10 @@ import Papers3dBackground from "../components/contact/Papers3dBackground.compone
 const useStyles = makeStyles(() => ({
   contactPage: {
     display: "flex",
-    alignItems: "center",
+    alignItems: "baseline",
     justifyContent: "center",
     height: "100vh",
+    overflowY: "auto",
   },
 }));
 

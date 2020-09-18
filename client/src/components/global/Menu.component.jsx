@@ -19,6 +19,7 @@ const Menu = () => {
       alignItems: "center",
       height: 60,
       margin: 0,
+      zIndex: theme.zIndex.drawer,
     },
     navLinks: {
       [theme.breakpoints.down("xs")]: {

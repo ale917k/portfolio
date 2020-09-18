@@ -13,9 +13,10 @@ import AlertMessage from "../global/AlertMessage.component";
 
 const useStyles = makeStyles((theme) => ({
   contactForm: {
+    position: "relative",
     alignSelf: "center",
     maxWidth: "400px",
-    margin: "0 auto",
+    margin: `${theme.spacing(16)}px auto ${theme.spacing(6)}px`,
     height: "fit-content",
     "& > *": {
       margin: theme.spacing(4),
@@ -72,6 +73,9 @@ const ContactForm = () => {
     <Container>
       <Card className={classes.contactForm}>
         <Typography variant="h1">How can I help?</Typography>
+        <Typography variant="body1">
+          Let's shape the future, together.
+        </Typography>
 
         {isEmailSent && (
           <AlertMessage
