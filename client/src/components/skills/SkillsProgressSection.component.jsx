@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   skillsContainer: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+    gridTemplateColumns: "repeat(auto-fit, minmax(380px, 1fr))",
     overflow: "hidden",
   },
 }));

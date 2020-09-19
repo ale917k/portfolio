@@ -21,6 +21,12 @@ const useStyles = makeStyles((theme) => ({
     gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
     gridGap: `${theme.spacing(3)}px`,
     marginBottom: theme.spacing(3),
+    [theme.breakpoints.down("sm")]: {
+      gridTemplateColumns: "repeat(auto-fit, minmax(310px, 1fr))",
+    },
+    [theme.breakpoints.down("xs")]: {
+      gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))",
+    },
   },
 }));
 

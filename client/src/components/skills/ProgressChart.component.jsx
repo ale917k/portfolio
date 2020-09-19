@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PieChart, Pie, Sector } from "recharts";
+import { PieChart, Pie, Sector, ResponsiveContainer } from "recharts";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
@@ -89,6 +89,10 @@ const renderActiveShape = ({
 const useStyles = makeStyles((theme) => ({
   progressChart: {
     position: "relative",
+    width: "408px",
+    height: "408px",
+    maxWidth: "100%",
+    maxHeight: "100%",
   },
   title: {
     position: "absolute",
@@ -102,6 +106,7 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
+  graph: {},
 }));
 
 const ProgressChart = ({ tech, valueAT, valueMT, valueAP, valueMP, link }) => {
@@ -126,22 +131,24 @@ const ProgressChart = ({ tech, valueAT, valueMT, valueAP, valueMP, link }) => {
           {tech}
         </Link>
       </Typography>
-      <PieChart width={400} height={400} className={classes.graph}>
-        <Pie
-          activeIndex={activeIndex}
-          activeShape={renderActiveShape}
-          data={data}
-          cx={200}
-          cy={200}
-          startAngle={270}
-          endAngle={-360}
-          innerRadius={60}
-          outerRadius={80}
-          fill="#8884d8"
-          dataKey="value"
-          onMouseEnter={onPieEnter}
-        />
-      </PieChart>
+      <ResponsiveContainer>
+        <PieChart className={classes.graph}>
+          <Pie
+            activeIndex={activeIndex}
+            activeShape={renderActiveShape}
+            data={data}
+            cx={200}
+            cy={200}
+            startAngle={270}
+            endAngle={-360}
+            innerRadius={60}
+            outerRadius={80}
+            fill="#148BEF"
+            dataKey="value"
+            onMouseEnter={onPieEnter}
+          />
+        </PieChart>
+      </ResponsiveContainer>
     </Box>
   );
 };
