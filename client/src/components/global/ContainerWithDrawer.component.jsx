@@ -17,21 +17,10 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseRoundedIcon from "@material-ui/icons/CloseRounded";
-import LineStyleRoundedIcon from "@material-ui/icons/LineStyleRounded";
-import StorageRoundedIcon from "@material-ui/icons/StorageRounded";
-import CameraRoundedIcon from "@material-ui/icons/CameraRounded";
-import BackupRoundedIcon from "@material-ui/icons/BackupRounded";
 import CachedRoundedIcon from "@material-ui/icons/CachedRounded";
 import UpdateRoundedIcon from "@material-ui/icons/UpdateRounded";
 
-import Scrollbar from "../global/Scrollbar.component";
-
-const navLinks = [
-  { title: "Frontend", Icon: LineStyleRoundedIcon },
-  { title: "Backend", Icon: StorageRoundedIcon },
-  { title: "Design", Icon: CameraRoundedIcon },
-  { title: "Other", Icon: BackupRoundedIcon },
-];
+import Scrollbar from "./Scrollbar.component";
 
 const drawerWidth = 240;
 
@@ -77,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SkillsContainer = ({ children }) => {
+const ContainerWithDrawer = ({ children, page, navLinks }) => {
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = useState(false);
   const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
@@ -96,7 +85,7 @@ const SkillsContainer = ({ children }) => {
             button
             key={title}
             component={RouterLink}
-            to={`/skills/${title.toLowerCase()}`}
+            to={`/${page.toLowerCase()}/${title.toLowerCase()}`}
             onClick={isMobile ? handleDrawerToggle : null}
           >
             <ListItemIcon>
@@ -107,33 +96,37 @@ const SkillsContainer = ({ children }) => {
         ))}
       </List>
       <Divider />
-      <List>
-        <ListItem
-          button
-          component={RouterLink}
-          to="/skills/progress"
-          onClick={handleDrawerToggle}
-        >
-          <ListItemIcon>
-            <CachedRoundedIcon />
-          </ListItemIcon>
-          <ListItemText primary="Progress" />
-        </ListItem>
-      </List>
-      <Divider />
-      <List>
-        <ListItem
-          button
-          component={RouterLink}
-          to="/skills/next"
-          onClick={handleDrawerToggle}
-        >
-          <ListItemIcon>
-            <UpdateRoundedIcon />
-          </ListItemIcon>
-          <ListItemText primary="What's Next" />
-        </ListItem>
-      </List>
+      {page === "Skills" && (
+        <Fragment>
+          <List>
+            <ListItem
+              button
+              component={RouterLink}
+              to="/skills/progress"
+              onClick={handleDrawerToggle}
+            >
+              <ListItemIcon>
+                <CachedRoundedIcon />
+              </ListItemIcon>
+              <ListItemText primary="Progress" />
+            </ListItem>
+          </List>
+          <Divider />
+          <List>
+            <ListItem
+              button
+              component={RouterLink}
+              to="/skills/next"
+              onClick={handleDrawerToggle}
+            >
+              <ListItemIcon>
+                <UpdateRoundedIcon />
+              </ListItemIcon>
+              <ListItemText primary="What's Next" />
+            </ListItem>
+          </List>
+        </Fragment>
+      )}
     </Fragment>
   );
 
@@ -153,11 +146,11 @@ const SkillsContainer = ({ children }) => {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" noWrap>
-              Skills
+              {page}
             </Typography>
             <IconButton
               color="inherit"
-              aria-label="close skills"
+              aria-label={`close ${page}`}
               edge="start"
               component={RouterLink}
               to="/about"
@@ -167,7 +160,7 @@ const SkillsContainer = ({ children }) => {
             </IconButton>
           </Toolbar>
         </AppBar>
-        <nav className={classes.drawer} aria-label="mailbox folders">
+        <nav className={classes.drawer} aria-label={`${page} folders`}>
           {isMobile ? (
             <Drawer
               variant="temporary"
@@ -203,4 +196,4 @@ const SkillsContainer = ({ children }) => {
   );
 };
 
-export default SkillsContainer;
+export default ContainerWithDrawer;

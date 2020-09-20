@@ -22,7 +22,6 @@ const useStyles = makeStyles(() => ({
   },
   text: {
     color: "#1B60A1",
-    textTransform: "uppercase",
   },
   title: {
     fontWeight: 900,
@@ -33,6 +32,7 @@ const useStyles = makeStyles(() => ({
     backgroundPosition: "center bottom",
     willChange: "transform",
     width: "110%",
+    left: "-50px",
   },
   layer1: {
     height: "110%",
@@ -52,6 +52,7 @@ const useStyles = makeStyles(() => ({
   },
   layer4: {
     height: "inherit",
+    left: "-100px",
     bottom: "-50px",
     backgroundImage: `url(${require("../assets/rocket-in-galaxy/layer3.svg")})`,
   },
@@ -79,10 +80,7 @@ const PageNotFound = () => {
         <Typography variant="h1" className={`${classes.text} ${classes.title}`}>
           Looks like you are lost...
         </Typography>
-        <Typography
-          variant="h2"
-          className={classes.text}
-        >
+        <Typography variant="h2" className={classes.text}>
           ...let's go&nbsp;
           <Link component={RouterLink} to="/">
             home
