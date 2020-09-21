@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
-import Particles from "react-particles-js";
-
+import Container from "@material-ui/core/Container";
+import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles";
 
-import ProjectsContainer from "../components/projects/ProjectsContainer.component";
+import ProjectsList from "../components/projects/ProjectsList.component";
+import ProjectsSlider from "../components/projects/ProjectsSlider.component";
+
+import PROJECTS from "../js/PROJECTS";
 
 const useStyles = makeStyles((theme) => ({
   projectsPage: {
@@ -15,37 +18,48 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.common.white,
     overflow: "hidden",
   },
-  particles: {
+  projectsContainer: {
+    position: "absolute",
+    top: `${theme.spacing(3) + 60}px`,
+    height: "100%",
+  },
+  container: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
     width: "100%",
+    height: "100%",
   },
 }));
-
-const particlesOptions = {
-  particles: {
-    number: {
-      value: 30,
-      density: {
-        enable: true,
-        value_area: 800,
-      },
-    },
-    color: {
-      value: "#0A0908",
-    },
-    line_linked: {
-      color: "#0A0908",
-    },
-  },
-};
 
 const Projects = () => {
   const classes = useStyles();
 
+  const [activeProject, setActiveProject] = useState(PROJECTS.mealner);
+
+  const updateActiveProject = (projectKey) => {
+    const selectedProject = Object.keys(PROJECTS)
+      .filter((key) => key === projectKey)
+      .reduce((obj, key) => {
+        return (obj[key] = PROJECTS[key]);
+      }, {});
+
+    setActiveProject(selectedProject);
+  };
+
   return (
-    <div className={classes.projectsPage}>
-      <Particles className={classes.particles} params={particlesOptions} />
-      <ProjectsContainer />
-    </div>
+    <Box className={classes.projectsPage}>
+      <Container className={classes.projectsContainer}>
+        <Box className={classes.container}>
+          <ProjectsList
+            projects={PROJECTS}
+            activeProject={activeProject}
+            updateActiveProject={updateActiveProject}
+          />
+          <ProjectsSlider imgPreview={activeProject.imgPreview} />
+        </Box>
+      </Container>
+    </Box>
   );
 };
 

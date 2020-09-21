@@ -12,7 +12,7 @@ const SliderItem = ({ imagePath }) => {
       backgroundImage: `url(${
         imagePath && imagePath.path
           ? require(`../../assets/${imagePath.path}.png`)
-          : require(`../../assets/no-image-white.png`)
+          : require(`../../assets/no-image-dark.png`)
       })`,
       backgroundSize: "cover",
     },

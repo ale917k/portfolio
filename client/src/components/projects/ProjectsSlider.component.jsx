@@ -90,6 +90,7 @@ const ProjectsSlider = ({ imgPreview }) => {
   const settings = {
     arrows: true,
     dots: false,
+    lazyLoad: true,
     infinite: true,
     speed: 200,
     slidesToShow: 1,
