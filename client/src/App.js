@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useRef, lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
+import { useMediaQuery } from "react-responsive";
 import { gsap } from "gsap";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -72,6 +73,7 @@ const useStyles = makeStyles((theme) => ({
 const App = () => {
   const classes = useStyles();
   const pageTransition = useRef(null);
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 960px)" });
 
   const onEntered = () => {
     gsap.to(pageTransition.current.children, {
@@ -93,35 +95,37 @@ const App = () => {
   };
 
   useEffect(() => {
-    const cursor = document.querySelector(".cursor");
-    const bgCursor = document.querySelector(".bg-cursor");
+    if (!isTabletOrMobile) {
+      const cursor = document.querySelector(".cursor");
+      const bgCursor = document.querySelector(".bg-cursor");
 
-    onmousemove = (e) => {
-      cursor.style.left = `${e.pageX}px`;
-      cursor.style.top = `${e.pageY}px`;
+      onmousemove = (e) => {
+        cursor.style.left = `${e.pageX}px`;
+        cursor.style.top = `${e.pageY}px`;
 
-      setTimeout(() => {
-        bgCursor.style.left = `${e.pageX}px`;
-        bgCursor.style.top = `${e.pageY}px`;
-      }, 50);
-    };
+        setTimeout(() => {
+          bgCursor.style.left = `${e.pageX}px`;
+          bgCursor.style.top = `${e.pageY}px`;
+        }, 50);
+      };
 
-    onmousedown = () => {
-      bgCursor.classList.add("expand");
-    };
+      onmousedown = () => {
+        bgCursor.classList.add("expand");
+      };
 
-    onmouseup = () => {
-      bgCursor.classList.remove("expand");
-    };
+      onmouseup = () => {
+        bgCursor.classList.remove("expand");
+      };
 
-    onmouseout = () => {
-      bgCursor.classList.remove("expand");
-    };
+      onmouseout = () => {
+        bgCursor.classList.remove("expand");
+      };
+    }
   });
 
   return (
     <Fragment>
-      <Cursor />
+      {!isTabletOrMobile && <Cursor />}
       {isIE ? (
         <Suspense fallback={<div></div>}>
           <IEBackup />
