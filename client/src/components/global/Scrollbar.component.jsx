@@ -175,7 +175,9 @@ const Scrollbar = ({ className, children }) => {
   const classes = useStyles();
 
   return (
-    <SimpleBarReact className={`${className} ${classes.scrollbar}`}>
+    <SimpleBarReact
+      className={`${classes.scrollbar}${className ? " " + className : ""}`}
+    >
       {children}
     </SimpleBarReact>
   );

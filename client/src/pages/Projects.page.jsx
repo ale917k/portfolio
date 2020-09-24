@@ -13,22 +13,23 @@ const useStyles = makeStyles((theme) => ({
   projectsPage: {
     display: "flex",
     justifyContent: "center",
-    width: "100vw",
     height: "100vh",
-    backgroundColor: theme.palette.common.white,
-    overflow: "hidden",
+    [theme.breakpoints.down("sm")]: {
+      overflowY: "auto",
+    },
   },
   projectsContainer: {
-    position: "absolute",
-    top: `${theme.spacing(3) + 60}px`,
-    height: "100%",
-  },
-  container: {
+    alignSelf: "center",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    width: "100%",
+    position: "relative",
+    padding: `${theme.spacing(16)}px 0 ${theme.spacing(6)}px`,
     height: "100%",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column-reverse",
+      height: "fit-content",
+    },
   },
 }));
 
@@ -49,8 +50,8 @@ const Projects = () => {
 
   return (
     <Box className={classes.projectsPage}>
-      <Container className={classes.projectsContainer}>
-        <Box className={classes.container}>
+      <Container>
+        <Box className={classes.projectsContainer}>
           <ProjectsList
             projects={PROJECTS}
             activeProject={activeProject}

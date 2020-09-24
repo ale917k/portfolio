@@ -89,7 +89,7 @@ const ContactForm = () => {
           <AlertMessage
             isActive={error}
             severity="error"
-            message="Ooops, it seems we have a problem.. Please retry again"
+            message="Ooops, it seems we have a problem.. Please try again"
           />
         )}
 

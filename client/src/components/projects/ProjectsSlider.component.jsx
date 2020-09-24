@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
     boxSizing: "border-box",
     userSelect: "none",
     touchAction: "pan-y",
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+    },
     // Main slick list
     "& .slick-list": {
       position: "relative",
