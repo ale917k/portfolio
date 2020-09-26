@@ -76,13 +76,15 @@ const App = () => {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 960px)" });
 
   const onEntered = () => {
-    gsap.to(pageTransition.current.children, {
-      duration: 0.5,
-      scaleY: 0,
-      transformOrigin: "bottom left",
-      stagger: 0.1,
-      delay: 0.1,
-    });
+    setTimeout(() => {
+      gsap.to(pageTransition.current.children, {
+        duration: 0.5,
+        scaleY: 0,
+        transformOrigin: "bottom left",
+        stagger: 0.1,
+        delay: 0.1,
+      });
+    }, 500);
   };
 
   const onExit = () => {
