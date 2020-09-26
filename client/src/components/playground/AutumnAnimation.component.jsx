@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-
 import {
   TweenMax,
   TimelineMax,
@@ -12,7 +11,7 @@ import {
 
 import { makeStyles } from "@material-ui/core/styles";
 
-import { ReactComponent as AutumnAnimationSvg } from "../../assets/autumn_card.svg";
+import { ReactComponent as AutumnAnimationSvg } from "../../assets/playground/autumn_card.svg";
 
 const useStyles = makeStyles(() => ({
   autumnAnimation: {
@@ -181,14 +180,14 @@ const AutumnAnimation = () => {
     let orangeLeaf = svg.children[2].children[2];
 
     const startLoops = () => {
-      // let colors = ["#edcc93", "#f7e3ae", "#f3ebcc", "#edcc93"];
-      // let bgTl = new TimelineMax({ repeat: -1, repeatDelay: 2 });
+      let colors = ["#edcc93", "#f7e3ae", "#f3ebcc", "#edcc93"];
+      let bgTl = new TimelineMax({ repeat: -1, repeatDelay: 2 });
 
-      // bgTl
-      //   .to(document.body, 3, { backgroundColor: colors[0] })
-      //   .to(document.body, 3, { backgroundColor: colors[1] }, "+=2")
-      //   .to(document.body, 3, { backgroundColor: colors[2] }, "+=2")
-      //   .to(document.body, 3, { backgroundColor: colors[3] }, "+=2");
+      bgTl
+        .to(document.body, 3, { backgroundColor: colors[0] })
+        .to(document.body, 3, { backgroundColor: colors[1] }, "+=2")
+        .to(document.body, 3, { backgroundColor: colors[2] }, "+=2")
+        .to(document.body, 3, { backgroundColor: colors[3] }, "+=2");
 
       const repeatFall = (leafId) => {
         let range = Math.random() * 800;
@@ -258,7 +257,12 @@ const AutumnAnimation = () => {
         .add(enterGreeting(), "scene-enter-greeting");
   }, [svg]);
 
-  return <AutumnAnimationSvg className={classes.autumnAnimation} ref={svg} />;
+  return (
+    <AutumnAnimationSvg
+      className={classes.autumnAnimation}
+      ref={(el) => (svg = el)}
+    />
+  );
 };
 
 export default AutumnAnimation;

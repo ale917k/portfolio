@@ -107,7 +107,11 @@ const About = () => {
             >
               Skills
             </Button>
-            <Button component={RouterLink} variant="outlined" to="/playground">
+            <Button
+              component={RouterLink}
+              variant="outlined"
+              to="/playground/autumn-animation"
+            >
               Playground
             </Button>
           </div>

@@ -7,7 +7,7 @@ import CameraRoundedIcon from "@material-ui/icons/CameraRounded";
 import BackupRoundedIcon from "@material-ui/icons/BackupRounded";
 
 import ContainerWithDrawer from "../components/global/ContainerWithDrawer.component";
-import SkillsSection from "../components/skills/SkillsSection.component";
+import AutumnAnimation from "../components/playground/AutumnAnimation.component";
 
 const navLinks = [
   { title: "Frontend", Icon: LineStyleRoundedIcon },
@@ -20,9 +20,11 @@ const Skills = () => {
   return (
     <ContainerWithDrawer page="Playground" navLinks={navLinks}>
       <Switch>
-        <Route exact path={"/playground/test"} component={SkillsSection} />
-        <Route exact path={"/playground/test2"} component={SkillsSection} />
-        <Route exact path={"/playground/test3"} component={SkillsSection} />
+        <Route
+          exact
+          path={"/playground/autumn-animation"}
+          component={AutumnAnimation}
+        />
         <Route path="*">
           <Redirect to="/page-not-found" />
         </Route>
