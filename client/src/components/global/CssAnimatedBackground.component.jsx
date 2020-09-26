@@ -4,7 +4,6 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   cssAnimatedBackground: {
-    background: "linear-gradient(135deg, #148BEF, #A90074)",
     position: "absolute",
     top: 0,
     left: 0,

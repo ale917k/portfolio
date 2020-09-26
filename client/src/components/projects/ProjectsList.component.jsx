@@ -17,10 +17,10 @@ const useStyles = makeStyles((theme) => ({
     listStyle: "none",
     "&:hover, &.active": {
       "& > $title": {
-        color: theme.palette.primary.main,
+        color: theme.palette.common.white,
         paddingLeft: theme.spacing(4),
         "&:before": {
-          borderColor: theme.palette.primary.main,
+          borderColor: theme.palette.common.white,
           width: theme.spacing(3),
         },
       },
@@ -55,6 +55,11 @@ const useStyles = makeStyles((theme) => ({
   hiddenContent: {
     display: "none",
     paddingLeft: theme.spacing(4),
+    color: theme.palette.common.white,
+  },
+  link: {
+    display: "block",
+    marginTop: theme.spacing(1),
   },
 }));
 
@@ -87,6 +92,9 @@ const ProjectsList = ({ projects, activeProject, updateActiveProject }) => {
                 href={project[1].link}
                 rel="noopener noreferrer"
                 target="_blank"
+                color="inherit"
+                underline="always"
+                className={classes.link}
               >
                 View Project
               </Link>

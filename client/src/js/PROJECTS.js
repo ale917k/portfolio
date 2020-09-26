@@ -31,6 +31,9 @@ const PROJECTS = {
       {
         path: "projects/portfolio23",
       },
+      {
+        path: "projects/portfolio24",
+      },
     ],
   },
   ecommerce: {

@@ -1,7 +1,7 @@
 import React from "react";
 
 import Slider from "react-slick";
-import SliderItem from "../global/SliderItem.component";
+import SliderItem from "./SliderItem.component";
 import SliderArrow from "./SliderArrow.component";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -14,6 +14,8 @@ const useStyles = makeStyles((theme) => ({
     boxSizing: "border-box",
     userSelect: "none",
     touchAction: "pan-y",
+    borderRadius: theme.spacing(0.5),
+    overflow: "hidden",
     [theme.breakpoints.down("sm")]: {
       width: "100%",
     },

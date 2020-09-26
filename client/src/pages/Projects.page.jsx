@@ -7,6 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import ProjectsList from "../components/projects/ProjectsList.component";
 import ProjectsSlider from "../components/projects/ProjectsSlider.component";
 import PageBackground from "../components/global/PageBackground.component";
+import CssAnimatedBackground from "../components/global/CssAnimatedBackground.component";
 
 import PROJECTS from "../js/PROJECTS";
 
@@ -52,6 +53,8 @@ const Projects = () => {
   return (
     <Box className={classes.projectsPage}>
       <PageBackground img="projects-background" />
+      <CssAnimatedBackground />
+
       <Container>
         <Box className={classes.projectsContainer}>
           <ProjectsList

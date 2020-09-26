@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 
 import PageBackground from "../components/global/PageBackground.component";
+import CssAnimatedBackground from "../components/global/CssAnimatedBackground.component";
 
 const useStyles = makeStyles((theme) => ({
   aboutPage: {
@@ -60,6 +61,9 @@ const useStyles = makeStyles((theme) => ({
       margin: "0 auto",
     },
   },
+  italicStyle: {
+    fontStyle: "italic",
+  },
 }));
 
 const About = () => {
@@ -68,6 +72,8 @@ const About = () => {
   return (
     <div className={classes.aboutPage}>
       <PageBackground img="about-background" />
+      <CssAnimatedBackground />
+
       <Container className={classes.container}>
         <div className={classes.textLinkContainer}>
           <div className={classes.text}>
@@ -87,7 +93,7 @@ const About = () => {
               Recently moved to London, I am currently looking for a position
               within a Team working in React, possibly utilizing a MERN stack.
             </Typography>
-            <Typography variant="body2">
+            <Typography variant="body2" className={classes.italicStyle}>
               What i love is travelling, meeting new people, discover different
               realities and create something new, every day.
             </Typography>

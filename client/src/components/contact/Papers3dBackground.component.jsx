@@ -14,8 +14,6 @@ const useStyles = makeStyles((theme) => ({
     left: 0,
     width: "100%",
     height: "100%",
-    backgroundColor: theme.palette.primary.main,
-    backgroundImage: `linear-gradient(10deg, ${theme.palette.primary.main} 0%, ${theme.palette.common.black} 74%)`,
     margin: "auto",
     perspective: "600px",
     zIndex: -1,
