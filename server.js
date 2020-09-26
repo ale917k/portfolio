@@ -29,6 +29,10 @@ app.get("/", function (req, res) {
   res.send("Up and running");
 });
 
+app.get("/service-worker.js", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "..", "build", "service-worker.js"));
+});
+
 app.post("/send_email", function (req, res) {
   const contactEmail = {
     from: req.body.email,
