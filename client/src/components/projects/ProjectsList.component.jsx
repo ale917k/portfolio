@@ -7,8 +7,8 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   projectsList: {
-    width: "40%",
-    padding: 0,
+    width: "50%",
+    padding: `0 ${theme.spacing(4)}px 0 0`,
     [theme.breakpoints.down("sm")]: {
       width: "100%",
     },

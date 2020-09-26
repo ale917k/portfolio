@@ -38,23 +38,23 @@ const useStyles = makeStyles(() => ({
     height: "110%",
     backgroundPosition: "center center",
     backgroundSize: "cover",
-    backgroundImage: `url(${require("../assets/rocket-in-galaxy/background.svg")})`,
+    backgroundImage: `url(${require("../assets/page-not-found/background.svg")})`,
   },
   layer2: {
     height: "inherit",
     bottom: "-50px",
-    backgroundImage: `url(${require("../assets/rocket-in-galaxy/layer1.svg")})`,
+    backgroundImage: `url(${require("../assets/page-not-found/layer1.svg")})`,
   },
   layer3: {
     height: "inherit",
     bottom: "-50px",
-    backgroundImage: `url(${require("../assets/rocket-in-galaxy/layer2.svg")})`,
+    backgroundImage: `url(${require("../assets/page-not-found/layer2.svg")})`,
   },
   layer4: {
     height: "inherit",
     left: "-100px",
     bottom: "-50px",
-    backgroundImage: `url(${require("../assets/rocket-in-galaxy/layer3.svg")})`,
+    backgroundImage: `url(${require("../assets/page-not-found/layer3.svg")})`,
   },
 }));
 

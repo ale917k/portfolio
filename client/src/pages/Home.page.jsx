@@ -25,24 +25,24 @@ const useStyles = makeStyles((theme) => ({
   },
   layer1: {
     height: "110%",
-    backgroundImage: `url(${require("../assets/abstract-galaxy/background.svg")})`,
+    backgroundImage: `url(${require("../assets/home/background.svg")})`,
     backgroundSize: "cover",
   },
   layer2: {
     height: "inherit",
-    backgroundImage: `url(${require("../assets/abstract-galaxy/layer1.svg")})`,
+    backgroundImage: `url(${require("../assets/home/layer1.svg")})`,
   },
   layer3: {
     height: "inherit",
-    backgroundImage: `url(${require("../assets/abstract-galaxy/layer2.svg")})`,
+    backgroundImage: `url(${require("../assets/home/layer2.svg")})`,
   },
   layer4: {
     height: "inherit",
-    backgroundImage: `url(${require("../assets/abstract-galaxy/layer3.svg")})`,
+    backgroundImage: `url(${require("../assets/home/layer3.svg")})`,
   },
   layer5: {
     height: "150%",
-    backgroundImage: `url(${require("../assets/abstract-galaxy/layer4.svg")})`,
+    backgroundImage: `url(${require("../assets/home/layer4.svg")})`,
     [theme.breakpoints.down("sm")]: {
       width: "175%",
     },
@@ -142,10 +142,7 @@ const Home = () => {
                   .deleteChars(16)
                   .typeString("Web Developer")
                   .pauseFor(2000)
-                  .deleteChars(13)
-                  .typeString("Dreamer")
-                  .pauseFor(2000)
-                  .deleteChars(9)
+                  .deleteChars(15)
                   .typeString("Alessio Petrin")
                   .pauseFor(6000)
                   .deleteAll()

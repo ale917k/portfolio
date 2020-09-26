@@ -21,7 +21,17 @@ const PROJECTS = {
     description:
       "Current version of the portfolio updated with modern technologies.",
     techs: ["React (w/Hooks)", "Material-UI", "PWA", "Node.js (w/Express)"],
-    imgPreview: [{}],
+    imgPreview: [
+      {
+        path: "projects/portfolio21",
+      },
+      {
+        path: "projects/portfolio22",
+      },
+      {
+        path: "projects/portfolio23",
+      },
+    ],
   },
   ecommerce: {
     title: "Clothing Ecommerce",
@@ -36,7 +46,20 @@ const PROJECTS = {
       "Stripe",
     ],
     link: "https://clothing-ecommerce-template.herokuapp.com/",
-    imgPreview: [{}],
+    imgPreview: [
+      {
+        path: "projects/ecommerce1",
+      },
+      {
+        path: "projects/ecommerce2",
+      },
+      {
+        path: "projects/ecommerce3",
+      },
+      {
+        path: "projects/ecommerce4",
+      },
+    ],
   },
   faceRecognition: {
     title: "AI Face Recognition",
@@ -71,7 +94,14 @@ const PROJECTS = {
       "Simple Web App for searching robot cards fetched from jsonplaceholder's API.",
     techs: ["React", "Redux", "PWA", "Jest (w/Enzyme)"],
     link: "https://ale917k.github.io/robofriend-redux/",
-    imgPreview: [{}],
+    imgPreview: [
+      {
+        path: "projects/robofriends1",
+      },
+      {
+        path: "projects/robofriends2",
+      },
+    ],
   },
   portfolioV1: {
     title: "Portfolio v1",

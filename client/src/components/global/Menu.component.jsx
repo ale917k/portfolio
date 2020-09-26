@@ -33,8 +33,8 @@ const Menu = () => {
         width: "100vw",
         height: "100vh",
         backgroundColor: theme.palette.primary.main,
-        clipPath: "circle(100px at 100% -20%)",
-        WebkitClipPath: "circle(100px at 100% -20%)",
+        clipPath: "circle(100px at 100% -22%)",
+        WebkitClipPath: "circle(100px at 100% -22%)",
         transition: theme.transitions.create(["all"], {
           easing: theme.transitions.easing.easeInOut,
           duration: theme.transitions.duration.enteringScreen,

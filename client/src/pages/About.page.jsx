@@ -6,7 +6,7 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 
-import CssAnimatedBackground from "../components/global/CssAnimatedBackground.component";
+import PageBackground from "../components/global/PageBackground.component";
 
 const useStyles = makeStyles((theme) => ({
   aboutPage: {
@@ -42,10 +42,15 @@ const useStyles = makeStyles((theme) => ({
       width: "100%",
     },
   },
+  gutterBottom2: {
+    marginBottom: "0.7em",
+  },
   links: {
     marginTop: theme.spacing(4),
     "& > a": {
       marginRight: theme.spacing(2),
+      borderColor: "rgba(255, 255, 255, 0.23)",
+      color: "rgba(255, 255, 255, 0.87)",
     },
   },
   img: {
@@ -62,6 +67,7 @@ const About = () => {
 
   return (
     <div className={classes.aboutPage}>
+      <PageBackground img="about-background" />
       <Container className={classes.container}>
         <div className={classes.textLinkContainer}>
           <div className={classes.text}>
@@ -69,18 +75,18 @@ const About = () => {
               ABOUT ME
             </Typography>
 
-            <Typography variant="body1" gutterBottom>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              <br />
-              <br />
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
-              <br />
+            <Typography variant="body1" className={classes.gutterBottom2}>
+              Born in Padua (Italy) in 1997, I graduated from I.T.I. Francesco
+              Severi with a Degree in Information Technology and
+              Telecommunications. After graduation in 2017, I moved to Oxford to
+              refine the language while working as Chef de Partie. Once acquired
+              enough fluency with the language, I started following the love for
+              coding, building websites through cutting-edge technologies.
             </Typography>
-
+            <Typography variant="body1" className={classes.gutterBottom2}>
+              Recently moved to London, I am currently looking for a position
+              within a Team working in React, possibly utilizing a MERN stack.
+            </Typography>
             <Typography variant="body2">
               What i love is travelling, meeting new people, discover different
               realities and create something new, every day.
@@ -107,8 +113,6 @@ const About = () => {
           alt="Myself"
         />
       </Container>
-
-      <CssAnimatedBackground />
     </div>
   );
 };
