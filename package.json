@@ -10,7 +10,8 @@
     "server": "nodemon server.js",
     "build": "cd client && npm run build",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "start": "node server.js"
+    "start": "node server.js",
+    "prod": "SET NODE_ENV=production&& node server.js"
   },
   "dependencies": {
     "dotenv": "7.0.0",
