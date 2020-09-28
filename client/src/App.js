@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useRef, lazy, Suspense } from "react";
+import ReactGA from "react-ga";
 import { Switch, Route } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import { useMediaQuery } from "react-responsive";
@@ -96,7 +97,14 @@ const App = () => {
     });
   };
 
+  const initializeReactGA = () => {
+    ReactGA.initialize("UA-179205326-1");
+    ReactGA.pageview("/homepage");
+  };
+
   useEffect(() => {
+    initializeReactGA();
+
     if (!isTabletOrMobile) {
       const cursor = document.querySelector(".cursor");
       const bgCursor = document.querySelector(".bg-cursor");
