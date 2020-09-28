@@ -23,26 +23,22 @@ const useStyles = makeStyles((theme) => ({
     willChange: "transform",
     width: "130%",
   },
-  layer1: {
+  background: {
     height: "110%",
-    backgroundImage: `url(${require("../assets/home/background.svg")})`,
+    backgroundImage: `url(${require("../assets/home/stars.png")}), url(${require("../assets/home/background.jpg")})`,
     backgroundSize: "cover",
+  },
+  layer1: {
+    height: "inherit",
+    backgroundImage: `url(${require("../assets/home/layer1.png")})`,
   },
   layer2: {
     height: "inherit",
-    backgroundImage: `url(${require("../assets/home/layer1.svg")})`,
+    backgroundImage: `url(${require("../assets/home/layer2.png")})`,
   },
   layer3: {
-    height: "inherit",
-    backgroundImage: `url(${require("../assets/home/layer2.svg")})`,
-  },
-  layer4: {
-    height: "inherit",
-    backgroundImage: `url(${require("../assets/home/layer3.svg")})`,
-  },
-  layer5: {
     height: "150%",
-    backgroundImage: `url(${require("../assets/home/layer4.svg")})`,
+    backgroundImage: `url(${require("../assets/home/layer3.svg")})`,
     [theme.breakpoints.down("sm")]: {
       width: "175%",
     },
@@ -86,9 +82,8 @@ const useStyles = makeStyles((theme) => ({
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 const trans1 = (x, y) => `translate3d(${x / 50}px,${y / 50}px,0)`;
 const trans2 = (x, y) => `translate3d(${x / 40}px,${y / 40}px,0)`;
-const trans3 = (x, y) => `translate3d(${x / 30}px,${y / 30}px,0)`;
-const trans4 = (x, y) => `translate3d(${x / 25}px,${y / 25}px,0)`;
-const trans5 = (x, y) => `translate3d(${x / 12}px,${y / 12}px,0)`;
+const trans3 = (x, y) => `translate3d(${x / 25}px,${y / 25}px,0)`;
+const trans4 = (x, y) => `translate3d(${x / 12}px,${y / 12}px,0)`;
 
 const Home = () => {
   const classes = useStyles();
@@ -103,24 +98,20 @@ const Home = () => {
       onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
     >
       <animated.div
-        className={`${classes.layer} ${classes.layer1}`}
+        className={`${classes.layer} ${classes.background}`}
         style={{ transform: props.xy.interpolate(trans1) }}
       />
       <animated.div
-        className={`${classes.layer} ${classes.layer2}`}
+        className={`${classes.layer} ${classes.layer1}`}
         style={{ transform: props.xy.interpolate(trans2) }}
       />
       <animated.div
-        className={`${classes.layer} ${classes.layer3}`}
+        className={`${classes.layer} ${classes.layer2}`}
         style={{ transform: props.xy.interpolate(trans3) }}
       />
       <animated.div
-        className={`${classes.layer} ${classes.layer4}`}
+        className={`${classes.layer} ${classes.layer3}`}
         style={{ transform: props.xy.interpolate(trans4) }}
-      />
-      <animated.div
-        className={`${classes.layer} ${classes.layer5}`}
-        style={{ transform: props.xy.interpolate(trans5) }}
       >
         <div className={classes.textWrapper}>
           <Typography
