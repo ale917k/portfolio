@@ -15,7 +15,6 @@ const About = lazy(() => import("./pages/About.page"));
 const Projects = lazy(() => import("./pages/Projects.page"));
 const Contact = lazy(() => import("./pages/Contact.page"));
 const Skills = lazy(() => import("./pages/Skills.page"));
-const Playground = lazy(() => import("./pages/Playground.page"));
 const Styleguide = lazy(() => import("./pages/Styleguide.page"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound.page"));
 const IEBackup = lazy(() => import("./pages/IEBackup.page"));
@@ -23,10 +22,7 @@ const IEBackup = lazy(() => import("./pages/IEBackup.page"));
 // Check if user is on IE
 const isIE = /*@cc_on!@*/ false || !!document.documentMode;
 
-const flexRoutes = [
-  { path: "/skills", name: "Skills", Component: Skills },
-  { path: "/playground", name: "Playground", Component: Playground },
-];
+const flexRoutes = [{ path: "/skills", name: "Skills", Component: Skills }];
 
 const exactRoutes = [
   { path: "/", name: "Home", Component: Home },
