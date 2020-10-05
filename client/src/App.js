@@ -15,7 +15,6 @@ const About = lazy(() => import("./pages/About.page"));
 const Projects = lazy(() => import("./pages/Projects.page"));
 const Contact = lazy(() => import("./pages/Contact.page"));
 const Skills = lazy(() => import("./pages/Skills.page"));
-const Styleguide = lazy(() => import("./pages/Styleguide.page"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound.page"));
 const IEBackup = lazy(() => import("./pages/IEBackup.page"));
 
@@ -27,7 +26,6 @@ const routes = [
   { path: "/about", name: "About", Component: About },
   { path: "/projects", name: "Projects", Component: Projects },
   { path: "/contact", name: "Contact", Component: Contact },
-  { path: "/styleguide", name: "Styleguide", Component: Styleguide },
 ];
 
 const useStyles = makeStyles((theme) => ({
