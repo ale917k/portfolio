@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import ReactGA from "react-ga";
 import { Link as RouterLink } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import Typewriter from "typewriter-effect";
@@ -91,6 +92,14 @@ const Home = () => {
     xy: [0, 0],
     config: { mass: 10, tension: 550, friction: 140 },
   }));
+
+  const initializeReactGA = () => {
+    ReactGA.pageview("/home");
+  };
+
+  useEffect(() => {
+    initializeReactGA();
+  });
 
   return (
     <div

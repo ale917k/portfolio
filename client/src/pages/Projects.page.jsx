@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import ReactGA from "react-ga";
 
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
@@ -49,6 +50,14 @@ const Projects = () => {
 
     setActiveProject(selectedProject);
   };
+
+  const initializeReactGA = () => {
+    ReactGA.pageview("/projects");
+  };
+
+  useEffect(() => {
+    initializeReactGA();
+  });
 
   return (
     <Box className={classes.projectsPage}>

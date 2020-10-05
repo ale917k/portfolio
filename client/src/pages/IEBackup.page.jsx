@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import ReactGA from "react-ga";
 
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
@@ -61,6 +62,14 @@ const useStyles = makeStyles((theme) => ({
 
 const IEBackup = () => {
   const classes = useStyles();
+
+  const initializeReactGA = () => {
+    ReactGA.pageview("/ie");
+  };
+
+  useEffect(() => {
+    initializeReactGA();
+  });
 
   return (
     <div className={classes.ieBackupPage}>
