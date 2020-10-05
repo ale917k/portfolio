@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import ReactGA from "react-ga";
+import React from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -19,14 +18,6 @@ const useStyles = makeStyles(() => ({
 
 const Contact = () => {
   const classes = useStyles();
-
-  const initializeReactGA = () => {
-    ReactGA.pageview("/contact");
-  };
-
-  useEffect(() => {
-    initializeReactGA();
-  });
 
   return (
     <div className={classes.contactPage}>

@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import ReactGA from "react-ga";
+import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 
 import LineStyleRoundedIcon from "@material-ui/icons/LineStyleRounded";
@@ -20,14 +19,6 @@ const navLinks = [
 ];
 
 const Skills = () => {
-  const initializeReactGA = () => {
-    ReactGA.pageview("/skills");
-  };
-
-  useEffect(() => {
-    initializeReactGA();
-  });
-
   return (
     <ContainerWithDrawer page="Skills" navLinks={navLinks}>
       <Switch>

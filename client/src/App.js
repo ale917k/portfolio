@@ -91,6 +91,7 @@ const App = () => {
 
   const initializeReactGA = () => {
     ReactGA.initialize("UA-179205326-1");
+    ReactGA.pageview("/homepage");
   };
 
   useEffect(() => {
