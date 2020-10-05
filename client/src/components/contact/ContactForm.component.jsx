@@ -64,8 +64,12 @@ const ContactForm = () => {
         messageHtml,
       }),
     });
-    const isEmailSent = await data.json();
-    isEmailSent.error ? setError(true) : setIsEmailSent(true);
+    try {
+      const isEmailSent = await data.json();
+      isEmailSent.error ? setError(true) : setIsEmailSent(true);
+    } catch (err) {
+      setError(true);
+    }
     setForm(initialFormState);
   };
 
@@ -81,7 +85,7 @@ const ContactForm = () => {
           <AlertMessage
             isActive={isEmailSent}
             severity="success"
-            message="Email sent successfully!"
+            message="Email sent successfully! Thank you for being in touch with me. I'll be back to you sooner possible."
           />
         )}
 
@@ -89,7 +93,8 @@ const ContactForm = () => {
           <AlertMessage
             isActive={error}
             severity="error"
-            message="Ooops, it seems we have a problem.. Please try again"
+            message="Ooops, there seems to be a problem.."
+            addContactInfo={true}
           />
         )}
 
