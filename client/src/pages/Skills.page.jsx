@@ -8,7 +8,6 @@ import BackupRoundedIcon from "@material-ui/icons/BackupRounded";
 
 import ContainerWithDrawer from "../components/global/ContainerWithDrawer.component";
 import SkillsSection from "../components/skills/SkillsSection.component";
-import SkillsProgressSection from "../components/skills/SkillsProgressSection.component";
 
 import SKILLS_TECH from "../js/SKILLS_TECH";
 
@@ -23,11 +22,6 @@ const Skills = () => {
   return (
     <ContainerWithDrawer page="Skills" navLinks={navLinks}>
       <Switch>
-        <Route
-          exact
-          path="/skills/progress"
-          component={SkillsProgressSection}
-        />
         {Object.entries(SKILLS_TECH).map(([key, value]) => (
           <Route key={key} exact path={`/skills/${key}`}>
             <SkillsSection {...value} />

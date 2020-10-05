@@ -331,6 +331,61 @@ const SKILLS_TECH = {
       },
     ],
   },
+  progress: {
+    title: "Skills In Progress",
+    subtitle:
+      "When we talk about development, there is always something to learn. Technologies are getting old or deprecated every couple of years, to give space to new faster and lighter technologies. This is what I'm keeping myself busy with.",
+    skills: [
+      {
+        title: "Jest (w/Enzyme)",
+        strapLine: "Testing Framework",
+        svgName: "jest",
+        description:
+          "Jest is a JavaScript testing framework designed to ensure correctness of any JavaScript codebase. It allows you to write tests that gives you results quickly.",
+        link: "https://jestjs.io/",
+      },
+      {
+        title: "Typescript",
+        strapLine: "Javascript Superset",
+        svgName: "typescript",
+        description:
+          "Types provide a way to describe the shape of an object, providing better documentation, and allowing TypeScript to validate that your code is working correctly.",
+        link: "https://www.typescriptlang.org/",
+      },
+      {
+        title: "GraphQL (w/Apollo)",
+        strapLine: "API Query Language",
+        svgName: "graphql",
+        description:
+          "GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.",
+        link: "https://graphql.org/",
+      },
+      {
+        title: "Code/Performance Analysis",
+        strapLine: "Performance Improvements",
+        svgName: "performance",
+        description:
+          "As the web advances, users' expectations grow. With web.dev's guidance, you can give your users the best experience, wherever they are.",
+        link: "https://web.dev/learn/",
+      },
+      {
+        title: "AWS",
+        strapLine: "Cloud Platforms",
+        svgName: "aws",
+        description:
+          "Amazon Web Services offers reliable, scalable, and inexpensive cloud computing services to individuals, companies, and governments, on a metered pay-as-you-go basis.",
+        link: "https://aws.amazon.com/",
+      },
+      {
+        title: "CI/CD (w/ CircleCI)",
+        strapLine: "Continuous Integration and Delivery",
+        svgName: "circleci",
+        description:
+          "CircleCI is a modern continuous integration and continuous delivery (CI/CD) platform which automates build, test, and deployment of software.",
+        link: "https://circleci.com/",
+      },
+    ],
+  },
   next: {
     title: "What's next",
     subtitle:

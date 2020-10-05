@@ -22,9 +22,7 @@ const IEBackup = lazy(() => import("./pages/IEBackup.page"));
 // Check if user is on IE
 const isIE = /*@cc_on!@*/ false || !!document.documentMode;
 
-const flexRoutes = [{ path: "/skills", name: "Skills", Component: Skills }];
-
-const exactRoutes = [
+const routes = [
   { path: "/", name: "Home", Component: Home },
   { path: "/about", name: "About", Component: About },
   { path: "/projects", name: "Projects", Component: Projects },
@@ -138,14 +136,10 @@ const App = () => {
         </Suspense>
       ) : (
         <Switch>
-          <Route path="/(skills|playground)">
-            {flexRoutes.map(({ path, Component }) => (
-              <Route key={path} path={path}>
-                <Suspense fallback={<div></div>}>
-                  <Component />
-                </Suspense>
-              </Route>
-            ))}
+          <Route path="/skills">
+            <Suspense fallback={<div></div>}>
+              <Skills />
+            </Suspense>
           </Route>
           <Route exact path="/(|about|projects|contact|styleguide)">
             <Header />
@@ -156,7 +150,7 @@ const App = () => {
               <li></li>
               <li></li>
             </ul>
-            {exactRoutes.map(({ path, Component }) => (
+            {routes.map(({ path, Component }) => (
               <Route key={path} exact path={path}>
                 {({ match }) => (
                   <CSSTransition
