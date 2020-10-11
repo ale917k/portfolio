@@ -56,7 +56,7 @@ const ContactForm = () => {
 
     const messageHtml = renderEmail(<ContactEmail {...form} />);
 
-    const data = await fetch("/send_email", {
+    const data = await fetch("/api/send_email", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
