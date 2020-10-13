@@ -20,7 +20,14 @@ const PROJECTS = {
     development: "2020",
     description:
       "Current version of the portfolio updated with modern technologies.",
-    techs: ["React (w/Hooks)", "Material-UI", "PWA", "Node.js (w/Express)"],
+    techs: [
+      "React (w/Hooks)",
+      "Material-UI",
+      "PWA",
+      "Node.js (w/Express)",
+      "AWS EC2",
+      "Linux (w/Apache)",
+    ],
     imgPreview: [
       {
         path: "projects/portfolio21",
