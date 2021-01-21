@@ -22,7 +22,7 @@
     "react-spring": "^8.0.27",
     "react-transition-group": "^4.4.1",
     "simplebar-react": "^2.2.1",
-    "typewriter-effect": "^2.13.1"
+    "typewriter-effect": "^2.17.0"
   },
   "scripts": {
     "start": "react-scripts start",
