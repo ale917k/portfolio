@@ -1,18 +1,15 @@
 {
   "name": "portfolio-server",
   "version": "1.0.0",
-  "engines": {
-    "node": "12.16.2",
-    "npm": "6.14.5"
-  },
   "scripts": {
+    "build": "cd client && npm run build",
     "client": "cd client && npm start",
+    "dev": "concurrently --kill-others-on-fail \"npm run livestart\" \"npm run client\"",
+    "preinstall": "cd client && npm install",
     "livestart": "nodemon server.js",
     "start": "node server.js",
-    "build": "cd client && npm run build",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "winprod": "SET NODE_ENV=production&& node server.js",
-    "ubuntuprod": "NODE_ENV=production node server.js"
+    "ubuntuprod": "NODE_ENV=production node server.js",
+    "winprod": "SET NODE_ENV=production&& node server.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",

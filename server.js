@@ -3,7 +3,7 @@ const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const path = require("path");
 const morgan = require("morgan");
-var environment = require("./env");
+const environment = require("./env");
 
 if (process.env.NODE_ENV !== "production") require("dotenv").config();
 
@@ -31,7 +31,7 @@ app.get("/service-worker.js", (req, res) => {
   res.sendFile(path.resolve(__dirname, "..", "build", "service-worker.js"));
 });
 
-app.post("/send_email", (req, res) => {
+app.post("/api/send_email", (req, res) => {
   const contactEmail = {
     from: req.body.email,
     to: "alessiopetrin9@gmail.com",
