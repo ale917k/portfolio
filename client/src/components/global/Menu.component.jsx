@@ -28,8 +28,8 @@ const useStyles = makeStyles((theme) => ({
       width: "100vw",
       height: "100vh",
       backgroundColor: theme.palette.primary.main,
-      clipPath: "circle(100px at 100% -22%)",
-      WebkitClipPath: "circle(100px at 100% -22%)",
+      clipPath: "circle(100px at 100% -100%)",
+      WebkitClipPath: "circle(100px at 100% -100%)",
       transition: theme.transitions.create(["all"], {
         easing: theme.transitions.easing.easeInOut,
         duration: theme.transitions.duration.enteringScreen,
@@ -88,16 +88,15 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.primary.main,
   },
   menuBurger: {
-    width: "40px",
-    height: "4px",
+    width: theme.spacing(3),
+    height: 4,
     background: theme.palette.common.white,
     borderRadius: "5px",
     boxShadow: "0 2px 5px rgba(255, 101, 47, .2)",
     "&:before, &:after": {
       content: '""',
       position: "absolute",
-      width: "50px",
-      height: "4px",
+      height: 4,
       background: theme.palette.common.white,
       borderRadius: "5px",
       boxShadow: "0 2px 5px rgba(255, 101, 47, .2)",
@@ -107,10 +106,12 @@ const useStyles = makeStyles((theme) => ({
       }),
     },
     "&:before": {
-      transform: "translateY(-16px)",
+      transform: "translateY(-12px)",
+      width: theme.spacing(4),
     },
     "&:after": {
-      transform: "translateY(16px)",
+      transform: "translateY(12px)",
+      width: theme.spacing(2),
     },
   },
   menuBurgerOpen: {
@@ -121,6 +122,7 @@ const useStyles = makeStyles((theme) => ({
     },
     "&:after": {
       transform: "rotate(-45deg)",
+      width: theme.spacing(4),
     },
   },
 }));

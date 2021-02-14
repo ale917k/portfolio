@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
     justifyContent: "space-between",
-    alignItems: "flex-end",
+    alignItems: "center",
     height: "100%",
     paddingTop: theme.spacing(16),
     [theme.breakpoints.down("sm")]: {
@@ -26,12 +26,15 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   textLinkContainer: {
+    alignSelf: "flex-end",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
+    width: "50%",
     height: "75%",
     paddingBottom: theme.spacing(5),
     [theme.breakpoints.down("sm")]: {
+      width: "100%",
       height: "auto",
     },
   },
@@ -55,9 +58,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   img: {
-    marginTop: "auto",
-    maxWidth: "100%",
+    width: "50%",
     [theme.breakpoints.down("sm")]: {
+      width: "100%",
       margin: "0 auto",
     },
   },
