@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useRef, lazy, Suspense } from "react";
 import ReactGA from "react-ga";
 import { Switch, Route } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
-import { useMediaQuery } from "react-responsive";
+import { isMobile } from "react-device-detect";
 import { gsap } from "gsap";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -66,7 +66,6 @@ const useStyles = makeStyles((theme) => ({
 const App = () => {
   const classes = useStyles();
   const pageTransition = useRef(null);
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 960px)" });
 
   const onEntered = () => {
     setTimeout(() => {
@@ -97,7 +96,7 @@ const App = () => {
   useEffect(() => {
     initializeReactGA();
 
-    if (!isTabletOrMobile) {
+    if (!isMobile) {
       const cursor = document.querySelector(".cursor");
       const bgCursor = document.querySelector(".bg-cursor");
 
@@ -127,7 +126,7 @@ const App = () => {
 
   return (
     <Fragment>
-      {!isTabletOrMobile && <Cursor />}
+      {!isMobile && <Cursor />}
       {isIE ? (
         <Suspense fallback={<div></div>}>
           <IEBackup />
