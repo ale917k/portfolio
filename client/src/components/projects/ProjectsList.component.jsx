@@ -9,8 +9,11 @@ const useStyles = makeStyles((theme) => ({
   projectsList: {
     width: "50%",
     padding: `0 ${theme.spacing(4)}px 0 0`,
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("lg")]: {
       width: "100%",
+    },
+    [theme.breakpoints.down("md")]: {
+      padding: 0,
     },
   },
   li: {
@@ -57,10 +60,6 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: theme.spacing(4),
     color: theme.palette.common.white,
   },
-  link: {
-    display: "block",
-    marginTop: theme.spacing(1),
-  },
 }));
 
 const ProjectsList = ({ projects, activeProject, updateActiveProject }) => {
@@ -81,24 +80,42 @@ const ProjectsList = ({ projects, activeProject, updateActiveProject }) => {
             className={classes.title}
           >{`${project[1].development} - ${project[1].title}`}</Typography>
           <Box className={classes.hiddenContent}>
-            <Typography variant="body1">{project[1].description}</Typography>
+            <Typography variant="body1">
+              {project[1].description}
+              {project[1].link && (
+                <>
+                  {" "}
+                  <Link
+                    href={project[1].link}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    color="inherit"
+                    underline="always"
+                  >
+                    View OSS code
+                  </Link>
+                </>
+              )}
+              {project[1].app && (
+                <>
+                  {" - "}
+                  <Link
+                    href={project[1].app}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    color="inherit"
+                    underline="always"
+                  >
+                    View project
+                  </Link>
+                </>
+              )}
+            </Typography>
             <ul>
               {project[1].techs.map((tech, index) => (
                 <li key={index}>{tech}</li>
               ))}
             </ul>
-            {project[1].link && (
-              <Link
-                href={project[1].link}
-                rel="noopener noreferrer"
-                target="_blank"
-                color="inherit"
-                underline="always"
-                className={classes.link}
-              >
-                View Project
-              </Link>
-            )}
           </Box>
         </li>
       ))}

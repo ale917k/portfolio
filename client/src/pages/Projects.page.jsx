@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -16,22 +15,43 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     height: "100vh",
-    [theme.breakpoints.down("sm")]: {
-      overflowY: "auto",
-    },
+    overflowY: "auto",
   },
   projectsContainer: {
-    alignSelf: "center",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     position: "relative",
     padding: `${theme.spacing(16)}px 0 ${theme.spacing(6)}px`,
-    height: "100%",
-    [theme.breakpoints.down("sm")]: {
+    width: "100%",
+    maxWidth: "min(1920px, 90vw)",
+    [theme.breakpoints.down("md")]: {
       flexDirection: "column-reverse",
       height: "fit-content",
     },
+  },
+  embeddedWebsite: {
+    position: "relative",
+    display: "block",
+    width: "90%",
+    borderRadius: theme.spacing(0.5),
+    overflow: "hidden",
+
+    "& iframe": {
+      border: 0,
+      position: "absolute",
+      width: "100%",
+      height: "100%",
+    },
+
+    [theme.breakpoints.down("lg")]: {
+      width: "100%",
+    },
+  },
+  aspectRatio: {
+    width: "100%",
+    height: 0,
+    paddingBottom: "56.25%",
   },
 }));
 
@@ -55,16 +75,23 @@ const Projects = () => {
       <PageBackground img="projects-background" />
       <CssAnimatedBackground />
 
-      <Container>
-        <Box className={classes.projectsContainer}>
-          <ProjectsList
-            projects={PROJECTS}
-            activeProject={activeProject}
-            updateActiveProject={updateActiveProject}
-          />
+      <Box className={classes.projectsContainer}>
+        <ProjectsList
+          projects={PROJECTS}
+          activeProject={activeProject}
+          updateActiveProject={updateActiveProject}
+        />
+
+        {activeProject.app ? (
+          <div className={classes.embeddedWebsite}>
+            <div className={classes.aspectRatio}>
+              <iframe title={activeProject.title} src={activeProject.app} />
+            </div>
+          </div>
+        ) : (
           <ProjectsSlider imgPreview={activeProject.imgPreview} />
-        </Box>
-      </Container>
+        )}
+      </Box>
     </Box>
   );
 };

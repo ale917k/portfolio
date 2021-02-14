@@ -10,13 +10,13 @@ const useStyles = makeStyles((theme) => ({
   projectsSlider: {
     position: "relative",
     display: "block",
-    width: "50%",
+    width: "90%",
     boxSizing: "border-box",
     userSelect: "none",
     touchAction: "pan-y",
     borderRadius: theme.spacing(0.5),
     overflow: "hidden",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("lg")]: {
       width: "100%",
     },
     // Main slick list

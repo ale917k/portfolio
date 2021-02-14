@@ -5,15 +5,36 @@ const PROJECTS = {
     description:
       "Meal planner & generator web app, currently in development within a team.",
     techs: [
-      "React (w/Hooks)",
-      "ContextAPI",
+      "React (w/Hooks & ContextAPI)",
       "Material-UI",
       "PWA",
       "JWT Sessions",
       "Node.js (w/Express)",
       "MongoDB",
+      "Docker",
+      "Typescript",
+      "Jest (w/Enzyme)",
+      "React Native",
+      "AWS Fargate (w/Nginx)",
     ],
     imgPreview: [{}],
+  },
+  reactAuthStarter: {
+    title: "React Auth Starter",
+    development: "2020",
+    description:
+      "React template for handling authentication, sessions and user updates.",
+    techs: [
+      "React (w/Hooks & ContextAPI)",
+      "JWT Sessions",
+      "Node.js (w/Express)",
+      "MongoDB",
+      "Docker",
+      "Typescript",
+      "AWS Fargate (w/Nginx)",
+    ],
+    app: "http://18.134.182.82",
+    link: "https://github.com/ale917k/react-auth-starter",
   },
   portfolioV2: {
     title: "Portfolio v2",
@@ -26,22 +47,10 @@ const PROJECTS = {
       "PWA",
       "Node.js (w/Express)",
       "AWS EC2",
-      "Linux (w/Apache)",
+      "Linux (w/Apache2)",
     ],
-    imgPreview: [
-      {
-        path: "projects/portfolio21",
-      },
-      {
-        path: "projects/portfolio22",
-      },
-      {
-        path: "projects/portfolio23",
-      },
-      {
-        path: "projects/portfolio24",
-      },
-    ],
+    app: "https://alessiopetrin.com",
+    link: "https://github.com/ale917k/portfolio",
   },
   ecommerce: {
     title: "Clothing Ecommerce",
@@ -55,21 +64,8 @@ const PROJECTS = {
       "Firebase",
       "Stripe",
     ],
-    link: "https://clothing-ecommerce-template.herokuapp.com/",
-    imgPreview: [
-      {
-        path: "projects/ecommerce1",
-      },
-      {
-        path: "projects/ecommerce2",
-      },
-      {
-        path: "projects/ecommerce3",
-      },
-      {
-        path: "projects/ecommerce4",
-      },
-    ],
+    app: "https://clothing-ecommerce-template.herokuapp.com/",
+    link: "https://github.com/ale917k/ecommerce",
   },
   faceRecognition: {
     title: "AI Face Recognition",
@@ -84,34 +80,19 @@ const PROJECTS = {
       "Redis",
       "Docker",
       "AWS Lambda",
+      "AWS Fargate",
     ],
-    imgPreview: [
-      {
-        path: "projects/smartbrain1",
-      },
-      {
-        path: "projects/smartbrain2",
-      },
-      {
-        path: "projects/smartbrain3",
-      },
-    ],
+    app: "http://35.177.80.215",
+    link: "https://github.com/ale917k/smart-recognition",
   },
   robofriends: {
     title: "Robofriends",
     development: "2019 - 2020",
     description:
-      "Simple Web App for searching robot cards fetched from jsonplaceholder's API.",
+      "Simple React App for searching robot cards fetched from jsonplaceholder's API.",
     techs: ["React", "Redux", "PWA", "Jest (w/Enzyme)"],
-    link: "https://ale917k.github.io/robofriend-redux/",
-    imgPreview: [
-      {
-        path: "projects/robofriends1",
-      },
-      {
-        path: "projects/robofriends2",
-      },
-    ],
+    app: "https://ale917k.github.io/robofriend-redux/",
+    link: "https://github.com/ale917k/robofriend-redux",
   },
   portfolioV1: {
     title: "Portfolio v1",
@@ -120,16 +101,16 @@ const PROJECTS = {
     techs: ["jQuery"],
     imgPreview: [
       {
-        path: "projects/portfolio11",
+        path: "projects/portfolio1",
       },
       {
-        path: "projects/portfolio12",
+        path: "projects/portfolio2",
       },
       {
-        path: "projects/portfolio13",
+        path: "projects/portfolio3",
       },
       {
-        path: "projects/portfolio14",
+        path: "projects/portfolio4",
       },
     ],
   },
