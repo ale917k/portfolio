@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   textWrapper: {
-    top: "50vh",
+    top: "55vh",
     left: "35%",
     position: "relative",
     display: "flex",
@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-evenly",
     alignItems: "center",
     width: "30%",
-    height: "50vh",
+    height: "40vh",
   },
   text: {
     color: theme.palette.common.white,
@@ -63,19 +63,18 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontWeight: 900,
-    [theme.breakpoints.down("md")]: {
-      fontSize: "3.5rem",
-    },
+    fontSize: "6.5vmin",
   },
   typewriter: {
     "& > *": {
       display: "inline-block",
       color: theme.palette.common.white,
       textAlign: "center",
-      [theme.breakpoints.down("md")]: {
-        fontSize: "2rem",
-      },
+      fontSize: "4vmin",
     },
+  },
+  button: {
+    fontSize: "1.6vmin",
   },
 }));
 
@@ -124,18 +123,18 @@ const Home = () => {
             <Typewriter
               onInit={(typewriter) => {
                 typewriter
-                  .pauseFor(1000)
+                  .pauseFor(500)
                   .typeString("Nice to see you around!")
-                  .pauseFor(2000)
+                  .pauseFor(1000)
                   .deleteChars(25)
                   .typeString("I am a Graphic Designer")
-                  .pauseFor(2000)
+                  .pauseFor(1000)
                   .deleteChars(16)
                   .typeString("Web Developer")
-                  .pauseFor(2000)
+                  .pauseFor(1000)
                   .deleteChars(15)
                   .typeString("Alessio Petrin")
-                  .pauseFor(6000)
+                  .pauseFor(3000)
                   .deleteAll()
                   .start();
               }}
@@ -150,6 +149,7 @@ const Home = () => {
             variant="contained"
             color="secondary"
             size="large"
+            className={classes.button}
           >
             Know more about me
           </Button>
