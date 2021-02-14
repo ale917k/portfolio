@@ -33,6 +33,9 @@ const useStyles = makeStyles((theme) => ({
         display: "block",
       },
     },
+    "&:not(.active)": {
+      cursor: "pointer",
+    },
   },
   title: {
     position: "relative",
