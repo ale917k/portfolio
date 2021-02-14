@@ -86,15 +86,16 @@ const About = () => {
 
             <Typography variant="body1" className={classes.gutterBottom2}>
               Born in Padua (Italy) in 1997, I graduated from I.T.I. Francesco
-              Severi with a Degree in Information Technology and
+              Severi with a diploma in Information Technology and
               Telecommunications. After graduation in 2017, I moved to Oxford to
-              refine the language while working as Chef de Partie. Once acquired
-              enough fluency with the language, I started following the love for
-              coding, building websites through cutting-edge technologies.
+              refine the language while working as Chef de Partie. I'm now a
+              Software Developer fallen in love with coding, crafting hand-made
+              websites through cutting-edge technologies.
             </Typography>
             <Typography variant="body1" className={classes.gutterBottom2}>
-              Recently moved to London, I am currently looking for a position
-              within a Team working in React, possibly utilizing a MERN stack.
+              Located in London, I'm currently open to onboard new projects. Do
+              you have something in mind? Whether it be a Desktop or Mobile App,
+              or both, I'm really excited to be part of your idea!
             </Typography>
             <Typography variant="body2" className={classes.italicStyle}>
               What i love is travelling, meeting new people, discover different

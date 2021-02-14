@@ -45,12 +45,20 @@ const SKILLS_TECH = {
         link: "https://en.wikipedia.org/wiki/Ajax_(programming)",
       },
       {
-        title: "Native Javascript (ES8)",
+        title: "Native Javascript (ES11)",
         strapLine: "Scripting Language",
         svgName: "javascript",
         description:
           "JavaScript is a high-level, often just-in-time compiled, and multi-paradigm programming language that conforms to the ECMAScript specification.",
         link: "https://en.wikipedia.org/wiki/JavaScript",
+      },
+      {
+        title: "Typescript",
+        strapLine: "Javascript Superset",
+        svgName: "typescript",
+        description:
+          "Types provide a way to describe the shape of an object, providing better documentation, and allowing TypeScript to validate that your code is working correctly.",
+        link: "https://www.typescriptlang.org/",
       },
       {
         title: "React (w/Hooks)",
@@ -92,6 +100,30 @@ const SKILLS_TECH = {
           "Gatsby is a static React-based open source framework with performance, scalability and security built-in.",
         link: "https://www.gatsbyjs.com/",
       },
+      {
+        title: "PWA",
+        strapLine: "Progressive Web Apps",
+        svgName: "pwa",
+        description:
+          "PWA functionality includes working offline, push notifications, and device hardware access, enabling creating user experiences similar to native applications.",
+        link: "https://web.dev/progressive-web-apps/",
+      },
+      {
+        title: "Webpack",
+        strapLine: "Module Bundler",
+        svgName: "webpack",
+        description:
+          "Webpack is a JavaScript module bundler which can transform front-end assets such as JavaScript, HTML, CSS, and images.",
+        link: "https://webpack.js.org/",
+      },
+      {
+        title: "Babel",
+        strapLine: "Javascript Transcompiler",
+        svgName: "babel",
+        description:
+          "Babel is a JavaScript transcompiler mainly used to convert ECMAScript 2015+ code into a version of JavaScript that can be run by older engines.",
+        link: "https://babeljs.io/",
+      },
     ],
   },
   backend: {
@@ -116,12 +148,12 @@ const SKILLS_TECH = {
         link: "https://expressjs.com/",
       },
       {
-        title: "PHP",
-        strapLine: "Scripting Language",
-        svgName: "php",
+        title: "NextJS",
+        strapLine: "React Server-side",
+        svgName: "next",
         description:
-          "PHP is a general-purpose, fast, flexible and pragmatic scripting language that is especially suited to web development.",
-        link: "https://www.php.net/",
+          "Next.js is a widely-used framework for building React applications that offer server-side rendering, automatic code-splitting, static exporting options, and easy production builds.",
+        link: "https://nextjs.org/",
       },
       {
         title: "RestAPI",
@@ -164,14 +196,6 @@ const SKILLS_TECH = {
         link: "https://www.mongodb.com/",
       },
       {
-        title: "Docker",
-        strapLine: "Virtual Containers",
-        svgName: "docker",
-        description:
-          "Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.",
-        link: "https://www.docker.com/",
-      },
-      {
         title: "Redis",
         strapLine: "In-Memory Database",
         svgName: "redis",
@@ -180,8 +204,24 @@ const SKILLS_TECH = {
         link: "https://redis.io/",
       },
       {
+        title: "Docker",
+        strapLine: "Virtual Containers",
+        svgName: "docker",
+        description:
+          "Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.",
+        link: "https://www.docker.com/",
+      },
+      {
+        title: "PHP",
+        strapLine: "Scripting Language",
+        svgName: "php",
+        description:
+          "PHP is a general-purpose, fast, flexible and pragmatic scripting language that is especially suited to web development.",
+        link: "https://www.php.net/",
+      },
+      {
         title: "C++",
-        strapLine: "OO Language",
+        strapLine: "OOP Language",
         svgName: "c",
         description:
           "C++ is a general-purpose, object-oriented, generic, and functional programming language.",
@@ -189,7 +229,7 @@ const SKILLS_TECH = {
       },
       {
         title: "Java",
-        strapLine: "OO Language",
+        strapLine: "OOP Language",
         svgName: "java",
         description:
           "Java is a class-based, object-oriented programming language designed to have as few implementation dependencies as possible.",
@@ -247,16 +287,8 @@ const SKILLS_TECH = {
   other: {
     title: "Other Technologies",
     subtitle:
-      "Frontend and Backend knowledge is most of the time not just enough when aiming high. Here I listed softwares and services which I use in order to enhance the performance / security of the development process and developed product.",
+      "Frontend and Backend technologies are most of the time not just enough to get the job done; here I listed softwares, services and platforms I use for performance, security and production of the development process and developed product.",
     skills: [
-      {
-        title: "Agile",
-        strapLine: "Agile Software Development",
-        svgName: "agile",
-        description:
-          "Agile approaches development requirements and solutions through the collaborative effort of self-organizing and cross-functional teams and their customer/end user.",
-        link: "https://en.wikipedia.org/wiki/Agile_software_development",
-      },
       {
         title: "Git",
         strapLine: "System Software",
@@ -264,46 +296,6 @@ const SKILLS_TECH = {
         description:
           "Git is a distributed version-control system for tracking changes in source code during software development.",
         link: "https://git-scm.com/",
-      },
-      {
-        title: "Heroku",
-        strapLine: "Cloud Platform",
-        svgName: "heroku",
-        description:
-          "Heroku is a cloud platform as a service supporting several programming languages.",
-        link: "https://www.heroku.com/",
-      },
-      {
-        title: "Firebase",
-        strapLine: "Backend Platform",
-        svgName: "firebase",
-        description:
-          "Firebase is a platform developed by Google for creating mobile and web applications.",
-        link: "https://firebase.google.com/",
-      },
-      {
-        title: "Snyk",
-        strapLine: "Security Software",
-        svgName: "snyk",
-        description:
-          "Snyk enables development teams to move quickly and securely by automatically finding and fixing issues faster than industry average.",
-        link: "https://snyk.io/",
-      },
-      {
-        title: "Stripe",
-        strapLine: "Financial Services Company",
-        svgName: "stripe",
-        description:
-          "Stripe consists of a payment processing software and application programming interfaces for e-commerce websites and mobile applications.",
-        link: "https://stripe.com/en-gb",
-      },
-      {
-        title: "PWA",
-        strapLine: "Progressive Web Apps",
-        svgName: "pwa",
-        description:
-          "PWA functionality includes working offline, push notifications, and device hardware access, enabling creating user experiences similar to native applications.",
-        link: "https://web.dev/progressive-web-apps/",
       },
       {
         title: "Analytics",
@@ -314,20 +306,44 @@ const SKILLS_TECH = {
         link: "https://analytics.google.com/",
       },
       {
-        title: "Webpack",
-        strapLine: "Module Bundler",
-        svgName: "webpack",
+        title: "Stripe",
+        strapLine: "Financial Services Company",
+        svgName: "stripe",
         description:
-          "Webpack is a JavaScript module bundler which can transform front-end assets such as JavaScript, HTML, CSS, and images.",
-        link: "https://webpack.js.org/",
+          "Stripe consists of a payment processing software and application programming interfaces for e-commerce websites and mobile applications.",
+        link: "https://stripe.com/en-gb",
       },
       {
-        title: "Babel",
-        strapLine: "Javascript Transcompiler",
-        svgName: "babel",
+        title: "Snyk",
+        strapLine: "Security Software",
+        svgName: "snyk",
         description:
-          "Babel is a JavaScript transcompiler mainly used to convert ECMAScript 2015+ code into a version of JavaScript that can be run by older engines.",
-        link: "https://babeljs.io/",
+          "Snyk enables development teams to move quickly and securely by automatically finding and fixing issues faster than industry average.",
+        link: "https://snyk.io/",
+      },
+      {
+        title: "Firebase",
+        strapLine: "Backend Platform",
+        svgName: "firebase",
+        description:
+          "Firebase is a platform developed by Google for creating mobile and web applications.",
+        link: "https://firebase.google.com/",
+      },
+      {
+        title: "Heroku",
+        strapLine: "Cloud Platform",
+        svgName: "heroku",
+        description:
+          "Heroku is a cloud platform as a service supporting several programming languages.",
+        link: "https://www.heroku.com/",
+      },
+      {
+        title: "Agile",
+        strapLine: "Agile Software Development",
+        svgName: "agile",
+        description:
+          "Agile approaches development requirements and solutions through the collaborative effort of self-organizing and cross-functional teams and their customer/end user.",
+        link: "https://en.wikipedia.org/wiki/Agile_software_development",
       },
     ],
   },
@@ -345,30 +361,6 @@ const SKILLS_TECH = {
         link: "https://jestjs.io/",
       },
       {
-        title: "Typescript",
-        strapLine: "Javascript Superset",
-        svgName: "typescript",
-        description:
-          "Types provide a way to describe the shape of an object, providing better documentation, and allowing TypeScript to validate that your code is working correctly.",
-        link: "https://www.typescriptlang.org/",
-      },
-      {
-        title: "GraphQL (w/Apollo)",
-        strapLine: "API Query Language",
-        svgName: "graphql",
-        description:
-          "GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.",
-        link: "https://graphql.org/",
-      },
-      {
-        title: "Code/Performance Analysis",
-        strapLine: "Performance Improvements",
-        svgName: "performance",
-        description:
-          "As the web advances, users' expectations grow. With web.dev's guidance, you can give your users the best experience, wherever they are.",
-        link: "https://web.dev/learn/",
-      },
-      {
         title: "AWS",
         strapLine: "Cloud Platforms",
         svgName: "aws",
@@ -384,21 +376,6 @@ const SKILLS_TECH = {
           "CircleCI is a modern continuous integration and continuous delivery (CI/CD) platform which automates build, test, and deployment of software.",
         link: "https://circleci.com/",
       },
-    ],
-  },
-  next: {
-    title: "What's next",
-    subtitle:
-      "The explosive love for learning new technologies, always brings me such related curiosity that is almost impossible to ignore. These are the fields I'll most likely spend most of my time on next months / years.",
-    skills: [
-      {
-        title: "NextJS",
-        strapLine: "Javascript Framework",
-        svgName: "next",
-        description:
-          "Next.js is a widely-used framework for building React applications that offer server-side rendering, automatic code-splitting, static exporting options, and easy production builds.",
-        link: "https://nextjs.org/",
-      },
       {
         title: "React Native",
         strapLine: "Javascript Framework",
@@ -408,12 +385,35 @@ const SKILLS_TECH = {
         link: "https://reactnative.dev/",
       },
       {
-        title: "Deno",
-        strapLine: "Runtime Environment",
-        svgName: "deno",
+        title: "GraphQL (w/Apollo)",
+        strapLine: "API Query Language",
+        svgName: "graphql",
         description:
-          "Deno is a simple, modern and secure runtime for JavaScript and TypeScript that uses V8 and is built in Rust.",
-        link: "https://deno.land/",
+          "GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.",
+        link: "https://graphql.org/",
+      },
+    ],
+  },
+  next: {
+    title: "What's next",
+    subtitle:
+      "The explosive love for learning brings me such interest over new technologies I find hard to ignore. These are the fields / techs I can't wait to put my hands on.",
+    skills: [
+      {
+        title: "Python",
+        strapLine: "High-level Programming Language",
+        svgName: "python",
+        description:
+          "Python is an interpreted, high-level and general-purpose programming language.",
+        link: "https://www.python.org/",
+      },
+      {
+        title: "Machine Learning",
+        strapLine: "Field of Study",
+        svgName: "ml",
+        description:
+          "Machine learning is the study of computer algorithms that improve automatically through experience. It is seen as a subset of artificial intelligence.",
+        link: "https://en.wikipedia.org/wiki/Machine_learning",
       },
       {
         title: "WebGL",
@@ -432,37 +432,20 @@ const SKILLS_TECH = {
         link: "https://arvr.google.com/",
       },
       {
-        title: "Python",
-        strapLine: "High-level Programming Language",
-        svgName: "python",
-        description:
-          "Python is an interpreted, high-level and general-purpose programming language.",
-        link: "https://www.python.org/",
-      },
-      {
-        title: "Data Structures",
-        strapLine: "Field of Study",
-        svgName: "data-structures",
-        description:
-          "A data structure is a data organization, management, and storage format that enables efficient access and modification.",
-        link:
-          "https://en.wikipedia.org/wiki/Data_structure#:~:text=In%20computer%20science%2C%20a%20data,be%20applied%20to%20the%20data.",
-      },
-      {
-        title: "Machine Learning",
-        strapLine: "Field of Study",
-        svgName: "ml",
-        description:
-          "Machine learning is the study of computer algorithms that improve automatically through experience. It is seen as a subset of artificial intelligence.",
-        link: "https://en.wikipedia.org/wiki/Machine_learning",
-      },
-      {
         title: "Electron",
         strapLine: "Software Framework",
         svgName: "electron",
         description:
           "Electron is a software framework which allows for the development of desktop GUI applications using web technologies.",
         link: "https://www.electronjs.org/",
+      },
+      {
+        title: "Deno",
+        strapLine: "Runtime Environment",
+        svgName: "deno",
+        description:
+          "Deno is a simple, modern and secure runtime for JavaScript and TypeScript that uses V8 and is built in Rust.",
+        link: "https://deno.land/",
       },
     ],
   },
