@@ -33,7 +33,7 @@ const PROJECTS = {
       "Typescript",
       "AWS Fargate (w/Nginx)",
     ],
-    app: "http://18.134.182.82",
+    app: "https://www.reactauthstarter.online/",
     link: "https://github.com/ale917k/react-auth-starter",
   },
   portfolioV2: {
@@ -82,7 +82,7 @@ const PROJECTS = {
       "AWS Lambda",
       "AWS Fargate",
     ],
-    app: "http://35.177.80.215",
+    app: "https://www.smartrecognition.space/",
     link: "https://github.com/ale917k/smart-recognition",
   },
   robofriends: {

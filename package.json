@@ -2,7 +2,7 @@
   "name": "portfolio-server",
   "version": "1.0.0",
   "scripts": {
-    "build": "cd client && npm run build",
+    "build": "cd client && npm run build:prod",
     "client": "cd client && npm start",
     "dev": "concurrently --kill-others-on-fail \"npm run livestart\" \"npm run client\"",
     "preinstall": "cd client && npm install",
